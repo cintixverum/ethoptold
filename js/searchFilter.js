@@ -9,6 +9,11 @@
         console.log($ps);
         $ps.hide();
         $ps.filter(function() {
-            return -1 != $(this).text().toUpperCase().indexOf(val); }).show(); 
+            return -1 != $(this).text().toUpperCase().indexOf(val); }).show();
     } 
+    $ps.one("click", function() {
+      if(!localStore.getItem($(this).attr("fullname")) {
+        localStore.setItem($(this).attr("fullname"),$(this).attr("address"));
+      }
+    });
   });
