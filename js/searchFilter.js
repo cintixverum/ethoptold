@@ -12,6 +12,6 @@
             return -1 != $(this).text().toUpperCase().indexOf(val); }).show(); 
     } 
     $ps.one("click", function() {
-        console.log($(this).attr("address"));
+        alert($(this).attr("address"));
     });
   });
