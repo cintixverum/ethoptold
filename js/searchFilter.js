@@ -12,12 +12,11 @@
     } 
     $ps.one("click", function() {
       if(localStore.getItem("tradedToken") !== $(this).attr("fullname")) {
-        console.log($(this).attr("fullname"));
-        localStore.setItem("tradedToken",$(this).attr("fullname"));
-        $('.baseToken').text(localStore.getItem("baseToken"));
-        $('.tradedToken').text(localStore.getItem("tradedToken"));   
-        $("#search-dropdown").hide();         
+        localStore.setItem("tradedToken",$(this).attr("fullname"));       
       }
+      $('.baseToken').text(localStore.getItem("baseToken"));
+      $('.tradedToken').text(localStore.getItem("tradedToken"));   
+      $("#search-dropdown").hide();  
     });
   });
 
