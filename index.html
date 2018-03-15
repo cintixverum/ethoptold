@@ -48,6 +48,10 @@
                         </button>  
                     </span>
                 </div>
+		<div id="search-dropdown" class="input-group stylish-input-group" style="width:100%;border:1px #f2f2f2 solid;background-color:white;font-size:13px;font-weight:600;display:none;">
+                  <p tokenName="ETHEREUM" tokenAddress="0x0000000000000000000000000000000000000000" style="color:black">ETH</p>
+                  <p tokenName="VERITASEUM" tokenAddress="0x8f225bffa2fca0852f727787227c4ce97adb572e" style="color:black">VERI</p>
+                </div>				
             </div>
 					</div>
 					
@@ -338,6 +342,22 @@
 	</script>
 	
   <script src="js/jquery-ui.js"></script>
+  <script>		
+  var $ps = $("#search-dropdown > p");
+  $("#imaginary_container > div:nth-child(1) > input").keyup(function() {
+    var val = $.trim(this.value).toUpperCase();
+    console.log(val);
+    if (val === "") {
+        $("#search-dropdown").hide(); 
+    }
+    else {
+        $("#search-dropdown").show(); 
+        $ps.hide();
+        $ps.filter(function() {
+            return -1 != $(this).text().toUpperCase().indexOf(val); }).show();
+    }
+  });
+  </script>	  
   <script>
   $( function() {
     $( "#datepicker" ).datepicker();
