@@ -358,6 +358,9 @@ $(document).ready(function(){
     $("#ser-btn").click(function(){
         $(".ser-bo").toggle();
     });
+    $('.baseToken').text(localStore.getItem("baseToken"));
+    $('.tradedToken').text(localStore.getItem("tradedToken"));
+    $('.timeframe').text(localStore.getItem("timeframe"));	
 });
 </script>
 
