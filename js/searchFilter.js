@@ -20,6 +20,6 @@
   });
 
 $(document).click(function(){
-  console.log($(this));
+  console.log($(this).parent().attr('id'));
   $("#search-dropdown").hide();
 });
