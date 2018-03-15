@@ -6,12 +6,12 @@
       let element = document.getElementById("metamask");
       if(accounts[0]) {
         element.style.color = "green";
-        element.textContent = "metamask unlocked";
+        element.textContent = "Metamask Unlocked";
         localStorage.setItem("userAddress",accounts[0]);
       }
       else {
         element.style.color = "red";
-        element.textContent = "metamask locked";
+        element.textContent = "Metamask Locked";
       }  
     })
   }, 5000)
