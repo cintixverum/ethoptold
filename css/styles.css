@@ -31,7 +31,7 @@ option {
   font-weight:600;
 }
 
-#search-dropdown:p {
+#search-dropdown p {
   cursor:pointer;
   padding:1% 1% 1% 1%;
   color: black;	
