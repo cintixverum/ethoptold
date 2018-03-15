@@ -61,4 +61,4 @@ var storageFactory =  function(storage) {
     key,
   };
   
-}();
+}(localStorage);
