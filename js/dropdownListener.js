@@ -1,4 +1,4 @@
-import localStorage from "./storage";
+import {localStorage} from "./storage";
 
 $('#baseToken').on('change', function() {
   localStorage.setItem("baseToken",this.value);
