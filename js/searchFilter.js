@@ -8,7 +8,7 @@
     else {
         $("#search-dropdown").show(); 
         $ps.hide();
-        console.log($ps.text());
+        console.log($ps);
         $ps.filter(function() {
             return -1 != $ps.text().toUpperCase().indexOf(val); }).show();
     }
