@@ -1,11 +1,11 @@
-import {localStorage} from "./storage.js";
-
+const localStore = storageFactory(localStorage);
+      
 $('#baseToken').on('change', function() {
-  localStorage.setItem("baseToken",this.value);
-  console.log(localStorage.getItem("baseToken"));
+  localStore.setItem("baseToken",this.value);
+  console.log(localStore.getItem("baseToken"));
 });
 
 $('#timeframe').on('change', function() {
-  localStorage.setItem("timeframe",this.value);
-  console.log(localStorage.getItem("timeframe"));
+  localStore.setItem("timeframe",this.value);
+  console.log(localStore.getItem("timeframe"));
 })
