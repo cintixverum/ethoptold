@@ -11,7 +11,7 @@
         $ps.filter(function() {
             return -1 != $(this).text().toUpperCase().indexOf(val); }).show(); 
     } 
-    $ps.click(function() {
+    $ps.one("click", function() {
         console.log($(this).attr("address"));
     });
   });
