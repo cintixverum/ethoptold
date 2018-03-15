@@ -6,7 +6,6 @@
     }
     else {
         $("#search-dropdown").show(); 
-        console.log($ps);
         $ps.hide();
         $ps.filter(function() {
             return -1 != $(this).text().toUpperCase().indexOf(val); }).show();
@@ -14,7 +13,8 @@
     $ps.one("click", function() {
       if(localStore.getItem("tradedToken") !== $(this).attr("fullname")) {
         localStore.setItem("tradedToken",$(this).attr("fullname"));
-        console.log(localStore.getItem("tradedToken"));
+        $('.baseToken').html(localStore.getItem("baseToken"));
+        $('.tradedToken').html(localStore.getItem("tradedToken"));                             
       }
     });
   });
