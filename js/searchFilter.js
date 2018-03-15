@@ -1,3 +1,5 @@
+  const localStore = storageFactory;
+
   $("#imaginary_container > div:nth-child(1) > input").keyup(function() {
     var $ps = $("#search-dropdown > p");
     var val = $.trim(this.value).toUpperCase();
@@ -12,8 +14,9 @@
             return -1 != $(this).text().toUpperCase().indexOf(val); }).show();
     } 
     $ps.one("click", function() {
-      if(!localStore.getItem($(this).attr("fullname")) {
-        localStore.setItem($(this).attr("fullname"),$(this).attr("address"));
+      if(localStore.getItem("tradedToken") !== $(this).attr("fullname")) {
+        localStore.setItem("tradedToken",$(this).attr("fullname"));
+        console.log(localStore.getItem("tradedToken"));
       }
     });
   });
