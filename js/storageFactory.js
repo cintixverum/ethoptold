@@ -1,6 +1,6 @@
 /* ISC License (ISC). Copyright 2017 Michal Zalecki */
 
-function storageFactory(storage) {
+var storageFactory =  function(storage) {
   let inMemoryStorage = {}; 
 
   function isSupported() {
@@ -60,6 +60,5 @@ function storageFactory(storage) {
     clear,
     key,
   };
-}
-
-export default storageFactory;
+  
+}();
