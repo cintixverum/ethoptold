@@ -8,8 +8,8 @@
     else {
         $("#search-dropdown").show(); 
         $ps.hide();
-        console.log($ps);
         $ps.filter(function() {
-            return -1 != $ps.text().toUpperCase().indexOf(val); }).show();
+            console.log($(this).text());
+            return -1 != $(this).text().toUpperCase().indexOf(val); }).show();
     }
   });
