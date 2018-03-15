@@ -1,7 +1,8 @@
 (function(){
   setInterval(function() {
     web3.eth.getAccounts(function (err, accounts) {
-      if(err) return;
+      if(err) return
+      console.log(accounts);
       let element = document.getElementById("metamask");
       if(accounts[0]) {
         element.style.color = "green";
