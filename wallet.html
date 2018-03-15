@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="content-type" content="text/html;charset=utf-8">
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Admin - Dashboard</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/datepicker3.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	
+	<!--Custom Font-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body id="body">
+	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sidebar-collapse" aria-expanded="true"><span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span></button>
+					<div class="row">
+					<div class="col-md-5 col-sm-4  col-xs-6">
+                                        <h3 style="color:black;font-weight:bold;padding-left:20px;" class="optionsLogo">Options<span style="color:#ccc;">Dex</span></h3>
+					<!--<div class="dark-light">
+<span class="dark" >Light</span><label class="switch">
+  <input type="checkbox">
+  <span class="slider round" onclick="toggleDarkLight()" ></span>
+</label><span class="light">Dark</span>
+					</div>-->
+					</div>
+					
+					<div class="col-md-3 col-sm-3 col-xs-3 hidden-xs">
+					<div id="imaginary_container"> 
+                <div class="input-group stylish-input-group">
+                    <input type="text" class="form-control" placeholder="Search assets">
+                    <span class="input-group-addon">
+                        <button type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>  
+                    </span>
+                </div>
+            </div>
+					</div>
+					
+					
+					<div class="col-md-4 col-sm-5 col-xs-6">
+					<div class="user-side">
+					<ul class="list-inline">
+					<li class="active hidden-xs"><a href="#">Dashboard</a></li>
+					<li class="hidden-xs"><a href="#">Wallet</a></li>
+					<li class="hidden-xs"><a href="#">MetaMask Unlocked</a></li>
+					</ul></div>
+					
+					</div>
+					
+					
+					</div>
+				
+				
+			</div>
+		</div><!-- /.container-fluid -->
+	</nav>
+	
+
+  	  <div id="imaginary_container" class="ser-bo"> 
+                <div class="input-group stylish-input-group">
+                    <input type="text" class="form-control" placeholder="Search assets">
+                    <span class="input-group-addon">
+                        <button type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>  
+                    </span>
+                </div>
+            </div>
+
+	
+	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 layer collapse in" aria-expanded="true">
+		
+		
+		<ul class="nav menu bid-na visible-xs">
+			<li class="active"><a href="#">Dashboard</a></li>
+					<li><a href="#">Wallet</a></li>
+					<li><a href="#">Settings</a></li>
+			
+		</ul>
+	</div><!--/.sidebar-->
+		
+		<!--/.main-->
+  <div class="wallet-container">
+    <div class="wallet-panel">
+       <div class="place-order">
+		<h3>Wallet</h3>
+		  <div class="btn-group" id="status" data-toggle="buttons">
+                    <label class="btn btn-default btn-on btn-sm active">
+                    <input type="radio" value="1" name="multifeatured_module[module_id][status]" checked="checked">Deposit</label>
+                    <label class="btn btn-default btn-off btn-sm ">
+                    <input type="radio" value="0" name="multifeatured_module[module_id][status]">Withdraw</label>
+
+                  </div>
+			<div class="btn-group" id="status1" data-toggle="buttons">
+                        </div>
+			<form class="place-order-form" action="" method="">
+					<div class="form-group ">
+					<label>Balance</label>			
+      <div class="input-group">
+	  
+         <input type="text" class="form-control" placeholder="$0.00">
+         <span class="input-group-addon">USD</span>
+      </div>
+</div>	 
+<div class="form-group "> 
+<label>Amount</label>	  
+      <div class="form-group input-group">
+	  
+         <input type="text" class="form-control" placeholder="$0.00">
+         <span class="input-group-addon">BTC</span>
+      </div>
+	  </div>
+	  
+	  <input type="Submit" class="submit" value="Deposit">
+	  
+			</form>
+		</div>
+             </div>
+           </div>
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/chart.min.js"></script>
+	<script src="js/chart-data.js"></script>
+	<script src="js/easypiechart.js"></script>
+	<script src="js/easypiechart-data.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/custom.js"></script>
+	<script src="js/scroll.js"></script><div id="ascrail2000" class="nicescroll-rails" style="width: 7px; z-index: auto; background: rgb(255, 255, 255); cursor: default; position: absolute; top: 1493.77px; left: 925.438px; height: 250px; opacity: 1; display: none;"><div style="position: relative; top: 0px; float: right; width: 7px; height: 121px; background-color: rgb(227, 227, 227); border: 0px; background-clip: padding-box; border-radius: 5px;"></div></div><div id="ascrail2000-hr" class="nicescroll-rails" style="height: 7px; z-index: auto; background: rgb(255, 255, 255); top: 1736.77px; left: 39.4375px; position: absolute; opacity: 1; cursor: default; display: none; width: 886px;"><div style="position: relative; top: 0px; height: 7px; width: 893px; background-color: rgb(227, 227, 227); border: 0px; background-clip: padding-box; border-radius: 5px;"></div></div>
+
+			
+<script>
+$(document).ready(function(){
+    $("#ser-btn").click(function(){
+        $(".ser-bo").toggle();
+    });
+});
+</script>
+
+
+
+</body></html>
