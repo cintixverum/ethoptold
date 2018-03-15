@@ -1,4 +1,4 @@
-const localStore = storageFactory.;
+const localStore = storageFactory;
       
 $('#baseToken').on('change', function() {
   localStore.setItem("baseToken",this.value);
