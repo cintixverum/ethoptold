@@ -9,9 +9,9 @@
         console.log($ps);
         $ps.hide();
         $ps.filter(function() {
-            return -1 != $(this).text().toUpperCase().indexOf(val); }).show();
-        $ps.click(function() {
-          console.log($(this).attr("address"));
-        }); 
+            return -1 != $(this).text().toUpperCase().indexOf(val); }).show(); 
     } 
+    $ps.click(function() {
+        console.log($(this).attr("address"));
+    });
   });
