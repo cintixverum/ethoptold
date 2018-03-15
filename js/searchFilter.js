@@ -20,5 +20,6 @@
   });
 
 $(document).click(function(){
+  console.log($(this));
   $("#search-dropdown").hide();
 });
