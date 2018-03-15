@@ -14,5 +14,5 @@
   });
 
   $("#search-dropdown > p").click(function() {
-    $(this).attr("address");
+    console.log($(this).attr("address"));
   });  
