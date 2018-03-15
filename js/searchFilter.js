@@ -13,6 +13,6 @@
     } 
   });
 
-$("#search-dropdown > p").one("click", function() {
+$("p").one("click", function() {
   alert($(this).attr("address"));
 });
