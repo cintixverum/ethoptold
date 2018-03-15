@@ -349,6 +349,19 @@ color:#f2f2f2
     padding-right:2%;
     margin-top: 2%;
 }
+
+
+.wallet-container {
+  margin-top:5%;
+}
+
+.wallet-panel{
+  padding: 20px;
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+
 .place-order{
   background: #fff;
     padding: 20px;
