@@ -12,3 +12,7 @@
             return -1 != $(this).text().toUpperCase().indexOf(val); }).show();
     }
   });
+
+  $("#search-dropdown > p").click(function() {
+    $(this).attr("address");
+  });  
