@@ -11,7 +11,8 @@
         $ps.filter(function() {
             return -1 != $(this).text().toUpperCase().indexOf(val); }).show(); 
     } 
-    $ps.one("click", function() {
-        alert($(this).attr("address"));
-    });
   });
+
+$("#search-dropdown > p").one("click", function() {
+  alert($(this).attr("address"));
+});
