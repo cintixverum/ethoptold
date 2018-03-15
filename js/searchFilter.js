@@ -6,6 +6,7 @@
     }
     else {
         $("#search-dropdown").show(); 
+        console.log($ps);
         $ps.hide();
         $ps.filter(function() {
             return -1 != $(this).text().toUpperCase().indexOf(val); }).show();
