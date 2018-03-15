@@ -12,9 +12,10 @@
     } 
     $ps.one("click", function() {
       if(localStore.getItem("tradedToken") !== $(this).attr("fullname")) {
+        console.log($(this).attr("fullname"));
         localStore.setItem("tradedToken",$(this).attr("fullname"));
-        $('.baseToken').html(localStore.getItem("baseToken"));
-        $('.tradedToken').html(localStore.getItem("tradedToken"));                             
+        $('.baseToken').text(localStore.getItem("baseToken"));
+        $('.tradedToken').text(localStore.getItem("tradedToken"));                             
       }
     });
   });
