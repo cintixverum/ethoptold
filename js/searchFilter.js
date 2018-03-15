@@ -1,5 +1,3 @@
-  const localStore = storageFactory;
-
   $("#imaginary_container > div:nth-child(1) > input").keyup(function() {
     var $ps = $("#search-dropdown > p");
     var val = $.trim(this.value).toUpperCase();
