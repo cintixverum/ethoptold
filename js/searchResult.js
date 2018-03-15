@@ -1,6 +1,7 @@
 $.get("https://www.optionsdexapi.tk/getApprovedTokens",function(tokenArray,status) {
     tokenArray.forEach(function(arr) {
-        let newRow = '<tr><th>' + arr['token_name'] + '</th><th id="' + arr['token_name'] + '" decimals=' + arr['decimals'] +  '>' + arr['token_symbol'] + '</th><th>' + arr['token_address'] + '</th></tr>'
-        $('#searchResult').load(newRow);
+        let paragraph = '<p id="' + arr['token_name'] + '" decimals="' + arr['decimals'] +  '" address="' + arr['token_address'] '" >' + arr['token_symbol'] + '</p>'
+        console.log(paragraph);
+        $('#search-dropdown').append(paragraph);
     });
-});        
+});
