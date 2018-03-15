@@ -18,3 +18,7 @@
       }
     });
   });
+
+$(document).click(function(){
+  $("#search-dropdown").hide();
+});
