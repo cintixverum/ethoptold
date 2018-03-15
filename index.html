@@ -409,10 +409,12 @@
 	<script src="js/bootstrap-datepicker.js"></script>
 	<script src="js/custom.js"></script>
 	<script src="js/scroll.js"></script>
+	<script type="module" src="js/storageFactory.js"></script>			
+	<script type="module" src="js/storage.js"></script>	
 	<script src="js/metamask.js"></script>	
 	<script src="js/dropdownListener.js"></script>	
 	<script>
-		window.onload = function () {
+        window.onload = function () {
 	var chart1 = document.getElementById("line-chart").getContext("2d");
 	window.myLine = new Chart(chart1).Line(lineChartData, {
 	responsive: true,
