@@ -17,9 +17,5 @@
         console.log(localStore.getItem("tradedToken"));
       }
     });
-    $(document).click(function(){
-      console.log($(this).attr('fullname'));
-      $("#search-dropdown").hide();
-    });
   });
 
