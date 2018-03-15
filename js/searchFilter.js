@@ -15,7 +15,8 @@
         localStore.setItem("tradedToken",$(this).attr("fullname"));       
       }
       $('.baseToken').text(localStore.getItem("baseToken"));
-      $('.tradedToken').text(localStore.getItem("tradedToken"));   
+      $('.tradedToken').text(localStore.getItem("tradedToken"));
+      $("#imaginary_container > div:nth-child(1) > input").val('');      
       $("#search-dropdown").hide();  
     });
   });
