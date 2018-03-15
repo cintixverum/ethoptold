@@ -6,13 +6,10 @@
         $("#search-dropdown").hide(); 
     }
     else {
+        $("#search-dropdown").show(); 
+        $ps.hide();
+        console.log($ps.text());
         $ps.filter(function() {
-            var bool = -1 !== $(this).text().toUpperCase().indexOf(val);
-            if(bool) {
-              $("#search-dropdown").show();
-            }
-           console.log(bool);
-           return bool;
-        }).show();
+            return -1 != $ps.text().toUpperCase().indexOf(val); }).show();
     }
   });
