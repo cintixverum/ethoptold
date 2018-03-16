@@ -359,7 +359,6 @@ $(document).ready(function(){
     let baseTokenQuery = "p[fullname='" + localStore.getItem("baseToken") + "']";  
     let tradedTokenAddress = $(tradedTokenQuery).attr("address");
     let baseTokenAddress = $(baseTokenQuery).attr("address");
-    console.log(tradedTokenQuery,baseTokenQuery,tradedTokenAddress,baseTokenAddress);
     updateOrderbook(tradedTokenAddress,baseTokenAddress);	
 });
 </script>
