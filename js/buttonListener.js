@@ -1,8 +1,9 @@
 $('#buySell > label.btn.btn-default.btn-on.btn-sm').on('click', function() {
   localStore.setItem("buySell",$(this).find('input').val());
   let tradedTokenQuery = "p[fullname='" + localStore.getItem("tradedToken") + "']";
-  console.log(tradedTokenQuery,$(tradedTokenQuery).attr("address"));
-  localStore.getItem("baseToken");
+  let baseTokenQuery = "p[fullname='" + localStore.getItem("baseToken") + "']";  
+  let tradedTokenAddress = $(tradedTokenQuery).attr("address");
+  let baseTokenAddress = $(baseTokenQuery).attr("address");
 });
 
 $('#buySell > label.btn.btn-default.btn-off.btn-sm').on('click', function() {
