@@ -23,8 +23,8 @@ function updateOrderbook(baseTokenAddress,tradedTokenAddress) {
 
 $('#buySell > label.btn.btn-default.btn-on.btn-sm').on('click', function() {
   localStore.setItem("buySell",$(this).find('input').val());
-  let tradedTokenQuery = "p[fullname='" + localStore.getItem("tradedToken") + "']";
-  let baseTokenQuery = "p[fullname='" + localStore.getItem("baseToken") + "']";  
+  let tradedTokenQuery = "p[fullName='" + localStore.getItem("tradedToken") + "']";
+  let baseTokenQuery = "p[fullName='" + localStore.getItem("baseToken") + "']";  
   let tradedTokenAddress = $(tradedTokenQuery).attr("address");
   let baseTokenAddress = $(baseTokenQuery).attr("address");  
   updateOrderbook(baseTokenAddress,tradedTokenAddress);  
@@ -32,8 +32,8 @@ $('#buySell > label.btn.btn-default.btn-on.btn-sm').on('click', function() {
 
 $('#buySell > label.btn.btn-default.btn-off.btn-sm').on('click', function() {
   localStore.setItem("buySell",$(this).find('input').val());
-  let tradedTokenQuery = "p[fullname='" + localStore.getItem("tradedToken") + "']";
-  let baseTokenQuery = "p[fullname='" + localStore.getItem("baseToken") + "']";  
+  let tradedTokenQuery = "p[fullName='" + localStore.getItem("tradedToken") + "']";
+  let baseTokenQuery = "p[fullName='" + localStore.getItem("baseToken") + "']";  
   let tradedTokenAddress = $(tradedTokenQuery).attr("address");
   let baseTokenAddress = $(baseTokenQuery).attr("address");  
   updateOrderbook(baseTokenAddress,tradedTokenAddress);  
@@ -42,8 +42,8 @@ $('#buySell > label.btn.btn-default.btn-off.btn-sm').on('click', function() {
 
 $('#optionType > label.btn.btn-default.btn-on.btn-sm').on('click', function() {
   localStore.setItem("optionType",$(this).find('input').val());
-  let tradedTokenQuery = "p[fullname='" + localStore.getItem("tradedToken") + "']";
-  let baseTokenQuery = "p[fullname='" + localStore.getItem("baseToken") + "']";  
+  let tradedTokenQuery = "p[fullName='" + localStore.getItem("tradedToken") + "']";
+  let baseTokenQuery = "p[fullName='" + localStore.getItem("baseToken") + "']";  
   let tradedTokenAddress = $(tradedTokenQuery).attr("address");
   let baseTokenAddress = $(baseTokenQuery).attr("address");  
   updateOrderbook(baseTokenAddress,tradedTokenAddress);  
@@ -51,8 +51,8 @@ $('#optionType > label.btn.btn-default.btn-on.btn-sm').on('click', function() {
 
 $('#optionType > label.btn.btn-default.btn-off.btn-sm').on('click', function() {
   localStore.setItem("optionType",$(this).find('input').val());
-  let tradedTokenQuery = "p[fullname='" + localStore.getItem("tradedToken") + "']";
-  let baseTokenQuery = "p[fullname='" + localStore.getItem("baseToken") + "']";  
+  let tradedTokenQuery = "p[fullName='" + localStore.getItem("tradedToken") + "']";
+  let baseTokenQuery = "p[fullName='" + localStore.getItem("baseToken") + "']";  
   let tradedTokenAddress = $(tradedTokenQuery).attr("address");
   let baseTokenAddress = $(baseTokenQuery).attr("address");  
   updateOrderbook(baseTokenAddress,tradedTokenAddress);  
