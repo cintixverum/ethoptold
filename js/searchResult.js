@@ -4,4 +4,8 @@ $.get("https://www.optionsdexapi.tk/getApprovedTokens",function(tokenArray,statu
         console.log(paragraph);
         $('#search-dropdown').append(paragraph);
     });
+    $('.baseToken').text(localStore.getItem("baseToken"));
+    $('.tradedToken').text(localStore.getItem("tradedToken"));
+    $('.timeframe').text(localStore.getItem("timeframe"));
+    updateOrderbook();
 });
