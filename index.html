@@ -355,11 +355,11 @@ $(document).ready(function(){
     $('.baseToken').text(localStore.getItem("baseToken"));
     $('.tradedToken').text(localStore.getItem("tradedToken"));
     $('.timeframe').text(localStore.getItem("timeframe"));
-    let tradedTokenQuery = "p[fullName='" + localStore.getItem("tradedToken") + "']";
-    let baseTokenQuery = "p[fullName='" + localStore.getItem("baseToken") + "']";  
+    let tradedTokenQuery = "p[fullname='" + localStore.getItem("tradedToken") + "']";
+    let baseTokenQuery = "p[fullname='" + localStore.getItem("baseToken") + "']";  
     let tradedTokenAddress = $(tradedTokenQuery).attr("address");
     let baseTokenAddress = $(baseTokenQuery).attr("address");
-    console.log(tradedTokenAddress,baseTokenAddress);
+    console.log(tradedTokenQuery,baseTokenQuery,tradedTokenAddress,baseTokenAddress);
     updateOrderbook(tradedTokenAddress,baseTokenAddress);	
 });
 </script>
