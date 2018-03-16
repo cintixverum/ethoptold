@@ -1,11 +1,13 @@
 function updateOrderbook() {
   let tradedTokenQuery = "p[fullname='" + localStore.getItem("tradedToken") + "']";
-  let baseTokenQuery = "p[fullname='" + localStore.getItem("baseToken") + "']"; 
-  console.log(tradedTokenQuery,baseTokenQuery);
+  let baseTokenQuery = "p[fullname='" + localStore.getItem("baseToken") + "']";
+  let timeframeQuery = "option[timeseconds" + localStore.getItem("timeseconds") + "']";
+  console.log(tradedTokenQuery,baseTokenQuery,timeframeQuery);
   let tradedTokenAddress = $(tradedTokenQuery).attr("address");
   let baseTokenAddress = $(baseTokenQuery).attr("address");
-  console.log(tradedTokenAddress,baseTokenAddress);
-  let data = {tokenA:null,tokenB:null,makerIsSeller:null};
+  let timeSeconds = $(timeframeQuery).attr("timeseconds");  
+  console.log(tradedTokenAddress,baseTokenAddress,timeSeconds);
+  let data = {tokenA:null,tokenB:null,makerIsSeller:null,timeframe:timeSeconds};
   localStorage.getItem("buySell") === "sell" ? data.makerIsSeller = "true" : data.makerIsSeller = "false";
   localStorage.getItem("optionType") === "put" ? (data.tokenA = baseTokenAddress,data.tokenB = tradedTokenAddress) : (data.tokenB = baseTokenAddress, data.tokenA = tradedTokenAddress);    
   console.log(data);
