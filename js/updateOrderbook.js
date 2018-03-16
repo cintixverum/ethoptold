@@ -1,10 +1,11 @@
 function updateOrderbook(baseTokenAddress,tradedTokenAddress) {
+  let data = {tokenA:null,tokenB:null,makerIsSeller:null};
+  buySell === "sell" ? data.makerIsSeller = "true" : data.makerIsSeller = "false";
+  putCallBool = optionType === "put" ? data.tokenA = baseTokenAddress, data.tokenB = tradedTokenAddress : data.tokenB = baseTokenAddress, data.tokenA = tradedTokenAddress;    
+  console.log(data);
   console.log(baseTokenAddress,tradedTokenAddress);	
-  $.post("https://www.optionsdexapi.tk/getBuyOptions", {
-      tokenA: baseTokenAddress,
-      tokenB: tradedTokenAddress,
-      makerIsSeller: "false"    	    
-  }, function(optionsArray, status) {
+  $.post("https://www.optionsdexapi.tk/getBuyOptions", data,
+     function(optionsArray, status) {
          optionsArray.forEach(function(arr) {
              let tokenA_Amount = parseInt(arr.limitTokenA) / (Math.pow(10, parseInt(arr.tokenADecimals)));
              let tokenB_Amount = parseInt(arr.limitTokenB) / (Math.pow(10, parseInt(arr.tokenBDecimals)));
