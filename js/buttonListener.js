@@ -1,9 +1,10 @@
 
 function updateOrderbook(baseTokenAddress,tradedTokenAddress) {
+  console.log(baseTokenAddress,tradedTokenAddress);	
   $.post("https://www.optionsdexapi.tk/getBuyOptions", {
       tokenA: baseTokenAddress,
       tokenB: tradedTokenAddress,
-	    makerIsSeller: "false"    	    
+      makerIsSeller: "false"    	    
   }, function(optionsArray, status) {
          optionsArray.forEach(function(arr) {
              let tokenA_Amount = parseInt(arr.limitTokenA) / (Math.pow(10, parseInt(arr.tokenADecimals)));
