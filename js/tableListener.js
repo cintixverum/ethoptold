@@ -1,3 +1,3 @@
-$("#orderbook > tbody > tr:gt(0)").on("click", function() {
+$("#orderbook").on("click", "tr", function() {
   console.log($(this).text());
 });
