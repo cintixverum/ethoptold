@@ -7,8 +7,7 @@ $('#baseToken').on('change', function() {
 
 $('#timeframe').on('change', function() {
   if(this.value === "Select Timeframe") return;  
-  console.log(this);
-  localStore.setItem("timeframe",this.attr('timeseconds'));
-  $('.timeframe').text(this.value); 
+  localStore.setItem("timeframe",this.value);
+  $('.timeframe').text(localStore.setItem("timeframe")); 
   window.location.reload(true);  
 })
