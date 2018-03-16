@@ -1,7 +1,7 @@
 function updateOrderbook() {
   let tradedTokenQuery = "p[fullname='" + localStore.getItem("tradedToken") + "']";
   let baseTokenQuery = "p[fullname='" + localStore.getItem("baseToken") + "']";
-  let timeframeQuery = "option[data='" + localStore.getItem("timeseconds") + "']";
+  let timeframeQuery = "option[date='" + localStore.getItem("timeseconds") + "']";
   console.log(tradedTokenQuery,baseTokenQuery,timeframeQuery);
   let tradedTokenAddress = $(tradedTokenQuery).attr("address");
   let baseTokenAddress = $(baseTokenQuery).attr("address");
