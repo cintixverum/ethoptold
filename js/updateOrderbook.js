@@ -22,7 +22,7 @@ function updateOrderbook() {
              let strike_price = ((tokenA_Amount / tokenB_Amount).toFixed(2)).toString();
              let expiration = new Date(arr.maturation*1000).toUTCString();
              let volatility = (parseFloat(arr.volatility).toFixed(2)).toString() + "%";
-             let newRow = '<tr order="' + JSON.stringify(arr).replace(/"/g, "'")  + '" ><td>' + premium + "/" + premiumPercentage + "%</td><td>" + tokenA_Amount
+             let newRow = "<tr order='" + JSON.stringify(arr).replace(/'/g, '"')  + "' ><td>" + premium + "/" + premiumPercentage + "%</td><td>" + tokenA_Amount
              + "</td><td>" + volatility + "</td><td>" + strike_price + "</td><td>" + expiration + "</td></tr>";
              $("#orderbook").append(newRow);
          });
