@@ -1,6 +1,5 @@
 /* ISC License (ISC). Copyright 2017 Michal Zalecki */
-
-var storageFactory =  function(storage) {
+const storageFactory =  function(storage) {
   let inMemoryStorage = {}; 
 
   function isSupported() {
