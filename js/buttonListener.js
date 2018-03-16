@@ -3,6 +3,7 @@ $('#status > label.btn.btn-default.btn-on.btn-sm').on('click', function() {
 });
 
 $('#status > label.btn.btn-default.btn-off.btn-sm.active').on('click', function() {
+  console.log($(this).find('input').val());
   localStore.setItem("buySell",$(this).find('input').val());
 });
 
@@ -11,5 +12,6 @@ $('#status1 > label.btn.btn-default.btn-on.btn-sm').on('click', function() {
 });
 
 $('#status1 > label.btn.btn-default.btn-off.btn-sm.active').on('click', function() {
+  console.log($(this).find('input').val());  
   localStore.setItem("optionType",$(this).find('input').val());
 });
