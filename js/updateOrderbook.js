@@ -6,8 +6,8 @@ function updateOrderbook() {
   let baseTokenAddress = $(baseTokenQuery).attr("address");
   console.log(tradedTokenAddress,baseTokenAddress);
   let data = {tokenA:null,tokenB:null,makerIsSeller:null};
-  buySell === "sell" ? data.makerIsSeller = "true" : data.makerIsSeller = "false";
-  optionType === "put" ? (data.tokenA = baseTokenAddress,data.tokenB = tradedTokenAddress) : (data.tokenB = baseTokenAddress, data.tokenA = tradedTokenAddress);    
+  localStorage.getItem("buySell") === "sell" ? data.makerIsSeller = "true" : data.makerIsSeller = "false";
+  localStorage.getItem("optionType") === "put" ? (data.tokenA = baseTokenAddress,data.tokenB = tradedTokenAddress) : (data.tokenB = baseTokenAddress, data.tokenA = tradedTokenAddress);    
   console.log(data);
   console.log(baseTokenAddress,tradedTokenAddress);	
   $.post("https://www.optionsdexapi.tk/getBuyOptions", data,
