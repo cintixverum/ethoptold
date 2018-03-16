@@ -7,4 +7,5 @@ $.get("https://www.optionsdexapi.tk/getApprovedTokens",function(tokenArray,statu
     $('.baseToken').text(localStore.getItem("baseToken"));
     $('.tradedToken').text(localStore.getItem("tradedToken"));
     $('.timeframe').text(localStore.getItem("timeframe"));
+    updateOrderbook();    
 });
