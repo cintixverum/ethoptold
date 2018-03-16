@@ -316,7 +316,8 @@
 	<script src="js/easypiechart-data.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
 	<script src="js/custom.js"></script>
-	<script src="js/scroll.js"></script>	
+	<script src="js/scroll.js"></script>
+	<script src="js/populatePage.js"></script>	
 	<script src="js/metamask.js"></script>	
 	<script src="js/storageFactory.js"></script>	
 	<script src="js/updateOrderbook.js"></script>	
@@ -352,11 +353,6 @@
 $(document).ready(function(){
     $("#ser-btn").click(function(){
         $(".ser-bo").toggle();
-    });
-    $('.baseToken').text(localStore.getItem("baseToken"));
-    $('.tradedToken').text(localStore.getItem("tradedToken"));
-    $('.timeframe').text(localStore.getItem("timeframe"));
-    updateOrderbook();	
 });
 </script>
 
