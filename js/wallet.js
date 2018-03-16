@@ -1,19 +1,21 @@
-$().one('click', function() {
-   sendTransaction(exchangeWallet.depositETH());
-});
-
-$().one('click', function() {
-   sendTransaction(exchangeWallet.withdrawETH());
-});
-
-$().one('click', function() {
+$('input[value="Deposit"]').one('click', function() {
   let depositTokenQuery = "p[fullname='" + localStore.getItem("depositToken") + "']";
   let depositTokenAddress = $(tradedTokenQuery).attr("address");
-  sendTransaction(exchangeWallet.depositToken(token));
+  if(depositTokenAddress === "0x0000000000000000000000000000000000000000") {
+    sendTransaction(exchangeWallet.depositETH());
+  }
+  else { 
+    sendTransaction(exchangeWallet.depositToken(depositTokenAddress));
+  }   
 });
 
-$().one('click', function() {
+$('input[value="Withdraw"]').one('click', function() {
   let depositTokenQuery = "p[fullname='" + localStore.getItem("depositToken") + "']";
   let depositTokenAddress = $(tradedTokenQuery).attr("address");
-  sendTransaction(exchangeWallet.withdrawToken(token));
+  if(depositTokenAddress === "0x0000000000000000000000000000000000000000") {
+    sendTransaction(exchangeWallet.depositETH());
+  } 
+  else { 
+    sendTransaction(exchangeWallet.withdrawToken(depositTokenAddress));
+  }   
 });
