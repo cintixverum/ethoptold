@@ -62,3 +62,6 @@ var storageFactory =  function(storage) {
   };
   
 }(localStorage);
+
+const localStore = storageFactory;
+
