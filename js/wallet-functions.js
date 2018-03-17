@@ -61,6 +61,7 @@ const walletFunctions =  function() {
   }
 
   return {
+    getBalance,
     depositETH,
     withdrawETH,
     depositToken,
