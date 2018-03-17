@@ -4,6 +4,17 @@ const walletFunctions =  function() {
   let contract = web3.eth.contract(contractABI).at(contractAddress);
   let userAddress = localStorage.getItem("userAddress");
 
+  function getBalance() {
+    let userAddress = localStorage.getItem("userAddress");
+    let tokenAddress = localStorage.getItem("depositToken");
+    let query = 'p[address="' + tokenAddress + '"]'; 
+    let decimals = $(query).attr('decimals');
+    optionsDEX.userBalance.call(userAddress,token, function(err,val) {
+       let value = "Balance: " + parseFloat(val)/(Math.pow(10,parseInt(decimals)));
+       return value;
+    })
+  }
+  
   function depositETH() {
     let data = optionsDEX.depositETH.getData();  	  
     let Tx{
