@@ -4,17 +4,15 @@ const walletFunctions =  function() {
   let contract = web3.eth.contract(contractABI).at(contractAddress);
   let userAddress = localStorage.getItem("userAddress");
 
-  function getBalance() {
+  function getBalance(callback) {
     let userAddress = localStorage.getItem("userAddress");
     let tokenName = localStorage.getItem("depositToken");
     let query = 'p[fullname="' + tokenName + '"]'; 
     let tokenAddress = $(query).attr('address');
     let decimals = $(query).attr('decimals');
-    console.log(userAddress,tokenAddress);
     contract.userBalance.call(userAddress,tokenAddress, function(err,val) {
        let value = parseFloat(val)/(Math.pow(10,parseInt(decimals)));
-       console.log(value);
-       return value;
+       callback(value);
     })
   }
   
