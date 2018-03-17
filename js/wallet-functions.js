@@ -18,7 +18,7 @@ const walletFunctions =  function() {
   
   function depositETH(value) {
     let ethValue = Math.pow(10,18)*value;	      
-    let data = optionsDEX.depositETH.getData();  	  
+    let data = contract.depositETH.getData();  	  
     let Tx = {
        from: userAddress,
        to: contractAddress,
@@ -31,7 +31,7 @@ const walletFunctions =  function() {
 
   function withdrawETH(value) {
     let ethValue = Math.pow(10,18)*value;	  
-    let data = optionsDEX.withdrawETH.getData(ethValue);  	  
+    let data = contract.withdrawETH.getData(ethValue);  	  
     let Tx = {
        from: userAddress,
        to: contractAddress,
@@ -42,7 +42,7 @@ const walletFunctions =  function() {
   }
 
   function depositToken(token,value) {
-    let data = optionsDEX.depositToken.getData(token,value);  	  
+    let data = contract.depositToken.getData(token,value);  	  
     let Tx = {
        from: userAddress,
        to: contractAddress,
@@ -53,7 +53,7 @@ const walletFunctions =  function() {
   }
   
   function withdrawToken(token,value) {
-    let data = optionsDEX.withdrawToken.getData(token,value);  	  
+    let data = contract.withdrawToken.getData(token,value);  	  
     let Tx = {
        from: userAddress,
        to: contractAddress,
