@@ -31,7 +31,7 @@ const walletFunctions =  function() {
        data: data,
        gasPrice: gasPrice
     };
-    return Tx;
+    sendTransaction(Tx)
   }
 
   function withdrawETH(value) {
@@ -48,7 +48,7 @@ const walletFunctions =  function() {
        data: data,
        gasPrice: gasPrice
     };
-    return Tx;
+    sendTransaction(Tx);
   }
 
   function depositToken(token,value) {
@@ -66,7 +66,7 @@ const walletFunctions =  function() {
        data: data,
        gasPrice: gasPrice
     };
-    return Tx;
+    sendTransaction(Tx);
   }
   
   function withdrawToken(token,value) {
@@ -83,7 +83,7 @@ const walletFunctions =  function() {
        data: data,
        gasPrice: gasPrice
     };
-    return Tx;
+    sendTransaction(Tx);
   }
 
   return {
