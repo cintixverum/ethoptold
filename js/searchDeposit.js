@@ -12,12 +12,12 @@
     } 
     $ps.one("click", function() {
       if(localStore.getItem("depositToken") !== $(this).attr("fullname")) {
-        localStore.setItem("depositToken",$(this).attr("fullname"));       
+        localStore.setItem("depositToken",$(this).attr("fullname"));        
       }
       $('.depositToken').text(localStore.getItem("depositToken"));
       $("#imaginary_container > div:nth-child(1) > input").val('');      
-      $("#search-dropdown").hide();  
+      $("#search-dropdown").hide();
+      $('#body > div.wallet-container > div > div > form > div:nth-child(1) > div > input').attr('placeholder',walletFunctions.getBalance());                  
     });
-    $('#body > div.wallet-container > div > div > form > div:nth-child(1) > div > input').attr('placeholder',walletFunctions.getBalance());            
   });
 
