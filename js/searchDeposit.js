@@ -1,4 +1,8 @@
-  $("#imaginary_container > div:nth-child(1) > input").keyup(function() {
+function loadBalance(val) {
+  $('#body > div.wallet-container > div > div > form > div:nth-child(1) > div > input').attr('placeholder',val);
+}
+
+$("#imaginary_container > div:nth-child(1) > input").keyup(function() {
     var $ps = $("#search-dropdown > p");
     var val = $.trim(this.value).toUpperCase();
     if (val === "") {
@@ -16,9 +20,7 @@
         $('.depositToken').text(localStore.getItem("depositToken"));
         $("#imaginary_container > div:nth-child(1) > input").val('');      
         $("#search-dropdown").hide();
-        walletFunctions.getBalance(function(val) {
-            $('#body > div.wallet-container > div > div > form > div:nth-child(1) > div > input').attr('placeholder',val);
-        })
+        walletFunctions.getBalance(loadBalance);
       }        
     });
   });
