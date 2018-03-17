@@ -3,7 +3,7 @@ $("input[value='Deposit']").on('click', function() {
   let depositTokenAddress = $(depositTokenQuery).attr("address");
   let value = parseFloat($('#body > div.wallet-container > div > div > form > div:nth-child(2) > div > input').val());
   console.log("wallet: ",depositTokenAddress," value: ",value);  
-  depositTokenAddress === "0x0000000000000000000000000000000000000000" ? sendTransaction(walletFunctions.depositETH(value)) : sendTransaction(walletFunctions.depositToken(depositTokenAddress,value)); 
+  depositTokenAddress === "0x0000000000000000000000000000000000000000" ? sendTransaction(walletFunctions.depositETH(value)) : sendTransaction(tokenFunctions.approveToken(value),walletFunctions.depositToken(depositTokenAddress,value)); 
 });
 
 $("input[value='Withdraw']").on('click', function() {
