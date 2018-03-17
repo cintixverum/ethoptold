@@ -16,18 +16,20 @@ const walletFunctions =  function() {
     })
   }
   
-  function depositETH() {
+  function depositETH(value) {
+    let ethValue = Math.pow(10,18)*value;	      
     let data = optionsDEX.depositETH.getData();  	  
     let Tx = {
        from: userAddress,
        to: contractAddress,
+       value:ethValue,
        data: data,
        gasPrice: gasPrice
     };
     return Tx;
   }
 
-  function withdrawETH() {
+  function withdrawETH(value) {
     let ethValue = Math.pow(10,18)*value;	  
     let data = optionsDEX.withdrawETH.getData(ethValue);  	  
     let Tx = {
