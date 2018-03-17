@@ -3,22 +3,21 @@ const walletFunctions =  function() {
   let contractAddress = "0xb9db80a18242554589bd1c1ddf5b429607a9e7ec";
   let contract = web3.eth.contract(contractABI).at(contractAddress);
   let userAddress = localStorage.getItem("userAddress");
+  let tokenName = localStorage.getItem("depositToken");
+  let query = 'p[fullname="' + tokenName + '"]'; 
+  let tokenAddress = $(query).attr('address');
+  let decimals = parseInt($(query).attr('decimals'));
   let gasPrice = 5000000000;
 
   function getBalance(callback) {
-    let userAddress = localStorage.getItem("userAddress");
-    let tokenName = localStorage.getItem("depositToken");
-    let query = 'p[fullname="' + tokenName + '"]'; 
-    let tokenAddress = $(query).attr('address');
-    let decimals = $(query).attr('decimals');
     contract.userBalance.call(userAddress,tokenAddress, function(err,val) {
-       let value = parseFloat(val)/(Math.pow(10,parseInt(decimals)));
+       let value = parseFloat(val)/(Math.pow(10,decimals));
        callback(value);
     })
   }
   
   function depositETH(value) {
-    let ethValue = Math.pow(10,18)*value;	      
+    let ethValue = Math.pow(10,decimals)*value;	      
     let data = contract.depositETH.getData();  	  
     let Tx = {
        from: userAddress,
@@ -31,7 +30,7 @@ const walletFunctions =  function() {
   }
 
   function withdrawETH(value) {
-    let ethValue = Math.pow(10,18)*value;	  
+    let ethValue = Math.pow(10,decimals)*value;	  
     let data = contract.withdrawETH.getData(ethValue);  	  
     let Tx = {
        from: userAddress,
