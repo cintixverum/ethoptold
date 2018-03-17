@@ -9,7 +9,7 @@ const walletFunctions =  function() {
     let tokenAddress = localStorage.getItem("depositToken");
     let query = 'p[address="' + tokenAddress + '"]'; 
     let decimals = $(query).attr('decimals');
-    optionsDEX.userBalance.call(userAddress,token, function(err,val) {
+    contract.userBalance.call(userAddress,token, function(err,val) {
        let value = "Balance: " + parseFloat(val)/(Math.pow(10,parseInt(decimals)));
        return value;
     })
