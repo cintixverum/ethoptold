@@ -58,7 +58,7 @@ const walletFunctions =  function() {
     let tokenAddress = $(query).attr('address');
     let decimals = parseInt($(query).attr('decimals'));   
     let ethValue = Math.pow(10,decimals)*value;
-    console.log(ethValue,decimals);
+    console.log(tokenAddress);
     let data = contract.depositToken.getData(token,ethValue);  	  
     let Tx = {
        from: userAddress,
