@@ -10,10 +10,11 @@ const tokenFunctions =  function() {
     let userAddress = localStorage.getItem("userAddress");
     let decimals = parseInt($(query).attr('decimals'));
     let ethValue = Math.pow(10,decimals)*value;
-    let data = tokenContract.approve.getData(tokenContract.address,ethValue);
+    console.log(tokenAddress);
+    let data = tokenContract.approve.getData(tokenAddress,ethValue);
     Tx = {
        from: userAddress,
-       to: tokenContract.address,
+       to: tokenAddress,
        data: data,
        gasPrice: gasPrice
     };	
