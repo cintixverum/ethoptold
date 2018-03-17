@@ -3,6 +3,7 @@ const walletFunctions =  function() {
   let contractAddress = "0xb9db80a18242554589bd1c1ddf5b429607a9e7ec";
   let contract = web3.eth.contract(contractABI).at(contractAddress);
   let userAddress = localStorage.getItem("userAddress");
+  let gasPrice = 5000000000;
 
   function getBalance(callback) {
     let userAddress = localStorage.getItem("userAddress");
