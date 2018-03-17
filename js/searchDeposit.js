@@ -1,7 +1,3 @@
-function loadBalance(val) {
-  $('#body > div.wallet-container > div > div > form > div:nth-child(1) > div > input').attr('placeholder',val);
-}
-
 $("#imaginary_container > div:nth-child(1) > input").keyup(function() {
     var $ps = $("#search-dropdown > p");
     var val = $.trim(this.value).toUpperCase();
