@@ -6,9 +6,11 @@ const walletFunctions =  function() {
 
   function getBalance() {
     let userAddress = localStorage.getItem("userAddress");
-    let tokenAddress = localStorage.getItem("depositToken");
-    let query = 'p[address="' + tokenAddress + '"]'; 
+    let tokenName = localStorage.getItem("depositToken");
+    let query = 'p[fullname="' + tokenName + '"]'; 
+    let tokenAddress = $(query).attr('address');
     let decimals = $(query).attr('decimals');
+    console.log(tokenAddress,decimals);
     contract.userBalance.call(userAddress,tokenAddress, function(err,val) {
        let value = "Balance: " + parseFloat(val)/(Math.pow(10,parseInt(decimals)));
        return value;
