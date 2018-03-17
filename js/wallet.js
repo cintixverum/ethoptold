@@ -6,6 +6,7 @@ function depositToken() {
 }  
 
 $("input[value='Deposit']").on('click', function() {
+  console.log($(this).attr('value'));
   let depositTokenQuery = "p[fullname='" + localStore.getItem("depositToken") + "']";
   let depositTokenAddress = $(depositTokenQuery).attr("address");
   let value = parseFloat($('#body > div.wallet-container > div > div > form > div:nth-child(2) > div > input').val());
@@ -14,6 +15,7 @@ $("input[value='Deposit']").on('click', function() {
 });
 
 $("input[value='Withdraw']").on('click', function() {
+  console.log($(this).attr('value'));  
   let depositTokenQuery = "p[fullname='" + localStore.getItem("depositToken") + "']";
   let depositTokenAddress = $(depositTokenQuery).attr("address");
   let value = parseFloat($('#body > div.wallet-container > div > div > form > div:nth-child(2) > div > input').val());  
