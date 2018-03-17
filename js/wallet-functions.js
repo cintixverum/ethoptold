@@ -10,9 +10,9 @@ const walletFunctions =  function() {
     let query = 'p[fullname="' + tokenName + '"]'; 
     let tokenAddress = $(query).attr('address');
     let decimals = $(query).attr('decimals');
-    console.log(tokenAddress,decimals);
     contract.userBalance.call(userAddress,tokenAddress, function(err,val) {
-       let value = "Balance: " + parseFloat(val)/(Math.pow(10,parseInt(decimals)));
+       let value = parseFloat(val)/(Math.pow(10,parseInt(decimals)));
+       console.log(value);
        return value;
     })
   }
