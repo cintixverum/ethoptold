@@ -92,6 +92,7 @@ const contractFunctions =  function() {
     let maturation_expiration  = [order.maturation,order.expiration];
     let makerIsSeller = order.makerIsSeller;
     let premiumIsTokenA = order.premiumIsTokenA;
+    console.log(order);
     let data = contract.fillOptionOrder.getData(tokenA_tokenB_maker,limitTokenA_limitTokenB_premium,maturation_expiration,makerIsSeller,premiumIsTokenA);	
     let Tx = {
        from: userAddress,
