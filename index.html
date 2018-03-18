@@ -134,16 +134,15 @@
               <input type="radio" value="put" name="multifeatured_module[module_id][status]">Put</label>
             </div>
 			<form class="place-order-form" action="" method="">
-			<div class="form-group">
-									<label>Expiration</label>
-                                                                        <select class="form-control">
-                                                                         <option>Select Timeframe</option>
-                                                                         <option>7D</option>
-                                                                         <option>1M</option>
-                                                                         <option>3M</option>
-                                                                         <option>1Y</option>
-                                                                        </select>
-								</div>
+			<div class="form-group ">
+					<label>Expiration</label>			
+      <div class ="input-group">
+	  
+         <input type = "number" range="24" class = "form-control" placeholder="Expiration In Hours">
+	      <span class = "input-group-addon"><span class="baseToken"></span></span>
+      </div>
+</div>	
+				
 					<div class="form-group ">
 					<label>Strike Price</label>			
       <div class ="input-group">
