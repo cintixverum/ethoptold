@@ -13,7 +13,7 @@ function sendTransactionCallback(Tx,callback) {
     let filter = web3.eth.filter('latest')
     filter.watch(function(error, result) {
       if (!error) {
-        web3.eth.blockNumber(function(err,blockNumber) {
+        web3.eth.getBlockNumber(function(err,blockNumber) {
           console.log(blockNumber);
           web3.eth.getBlock(parseInt(blockNumber) - 11, function(err,confirmedBlock) {
             if (confirmedBlock.transactions.length > 0) {
