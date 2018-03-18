@@ -1,3 +1,3 @@
-$('#orderbook').on('click', function() {
+$('#orderbook tr').on('click', function() {
   $(this).addClass('selected');
 });  
