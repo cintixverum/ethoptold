@@ -282,6 +282,8 @@ const contractFunctions =  function() {
             'r': null,
             's': null
         }
+        
+        console.log(orderObject);
 
         let param1 = [orderObject['tokenA'], orderObject['tokenB'], userAddress];
         let param2 = [orderObject['limitTokenA'], orderObject['limitTokenB'], orderObject['premium']];
