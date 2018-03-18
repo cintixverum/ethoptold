@@ -320,7 +320,8 @@ const contractFunctions =  function() {
     withdrawETH,
     depositToken,
     withdrawToken,
-    takeOption
+    takeOption,
+    create  
   };
   
 }();
