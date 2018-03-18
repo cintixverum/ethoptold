@@ -87,6 +87,7 @@ const contractFunctions =  function() {
   }
   
   function takeOption(order) {
+    let userAddress = localStorage.getItem("userAddress");    
     let tokenA_tokenB_maker = [order.tokenA,order.tokenB, order.maker];
     let limitTokenA_limitTokenB_premium = [order.limitTokenA,order.limitTokenB,order.premium];
     let maturation_expiration  = [order.maturation,order.expiration];
