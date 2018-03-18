@@ -1,3 +1,4 @@
 $("#orderbook").on("click", "tr", function() {
-  console.log(JSON.parse($(this).attr('order')));
+  $(this).addClass('selected');  
+  localStorage.setItem("currentOrder",JSON.parse($(this).attr('order')));
 });
