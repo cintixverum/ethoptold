@@ -210,7 +210,7 @@ const contractFunctions =  function() {
     let optionsType = localStorage.getItem("createCallPut");      
     let optionsType2 = localStorage.getItem("createBuySell");
       
-    let inputs = $('.place-order .form-control input');
+    let inputs = $('.place-order.form-control input');
     console.log(inputs);  
     let strike_price = parseFloat(inputs[1].value); 
     let premium = parseFloat(inputs[2].value);
