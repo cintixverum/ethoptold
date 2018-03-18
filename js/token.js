@@ -18,7 +18,7 @@ const tokenFunctions =  function() {
        data: data,
        gasPrice: gasPrice
     };	
-    sendTransaction(Tx,callback);
+    sendTransactionCallback(Tx,callback);
   } 
   
   return {
