@@ -213,10 +213,9 @@ const contractFunctions =  function() {
     let inputs = $('input.form-control');
     console.log(inputs);  
     let strike_price = parseFloat(inputs[3].value); 
-    let premium = parseFloat(inputs[4].value);
+    let premiumVal = parseFloat(inputs[4].value);
     let tokenAmount = parseFloat(inputs[5].value);
-    console.log(tokenAmount);
-    
+         
     if(!timeframe) {
         alert("Timeframe not selected!");
     }
@@ -239,7 +238,7 @@ const contractFunctions =  function() {
             marketPrice = parseFloat(tokenInfo[0].price_eth);
         }
         
-        let volatility = getCallVolatility(tokenAmount,premium,marketPrice,strike_price);
+        let volatility = getCallVolatility(tokenAmount,premiumVal,marketPrice,strike_price);
 
         if(volatility === -1) {
             alert("Invalid Orders");
