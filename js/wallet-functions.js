@@ -87,7 +87,7 @@ const contractFunctions =  function() {
   }
 
   return {
-    getBalance,
+    getWalletBalance,
     depositETH,
     withdrawETH,
     depositToken,
