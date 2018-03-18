@@ -34,7 +34,6 @@ option {
 #orderbook tr:hover {
   cursor:pointer;
   background-color:#f2f2f2;
-  color:white;	
 }	
 
 #search-dropdown p {
