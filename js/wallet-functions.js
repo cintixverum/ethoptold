@@ -85,13 +85,30 @@ const contractFunctions =  function() {
     };
     sendTransaction(Tx);
   }
+  
+  function takeOption(order) {
+    let tokenA_tokenB_maker = [order.tokenA,order.tokenB, order.maker];
+    let limitTokenA_limitTokenB_premium = [order.limitTokenA,order.limitTokenB,order.premium];
+    let maturation_expiration  = [order.maturation,order.expiration];
+    let makerIsSeller = order.makerIsSeller;
+    let premiumIsTokenA = order.premiumIsTokenA;
+    let data = contract.fillOptionOrder.getData(tokenA_tokenB_maker,limitTokenA_limitTokenB_premium,maturation_expiration,makerIsSeller,premiumIsTokenA);	
+    let Tx = {
+       from: userAddress,
+       to: contractAddress,
+       data: data,
+       gasPrice: gasPrice
+    };
+    sendTransaction(Tx);    
+  }
 
   return {
     getWalletBalance,
     depositETH,
     withdrawETH,
     depositToken,
-    withdrawToken
+    withdrawToken,
+    takeOption
   };
   
 }();
