@@ -206,10 +206,10 @@ const contractFunctions =  function() {
     let timeframeQuery = "option[date='" + localStore.getItem("orderTimeframe") + "']";
     let timeframe = parseInt(Date.now()/1000) + parseInt($(timeframeQuery).attr("timeseconds")); 
     
-    let optionsType = $('#OptionType').val();
-    let optionsType2 = $('#OptionType2').val();
- 
-    let inputs = $("Create").attr("input");
+    let optionsType = localStorage.getItem("createCallPut");      
+    let optionsType2 = localStorage.getItem("createBuySell");
+      
+    let inputs = $('.place-order input');
     
     if(!timeframe) {
         alert("Timeframe not selected!");
@@ -255,12 +255,12 @@ const contractFunctions =  function() {
         let limitTokenA = toFixedNumber(parseFloat(tokenAmountInBase.multipliedBy(Math.pow(10, baseTokenDecimals))));
         let limitTokenB = toFixedNumber(parseFloat(amount));
         let premium = toFixedNumber(parseFloat(new BigNumber(inputs[5].value).multipliedBy(Math.pow(10, baseTokenDecimals))));
-        let makerIsSeller = optionsType2 === "Sell" ? "true" : "false";
+        let makerIsSeller = optionsType2 === "sell" ? "true" : "false";
 
-        if(optionsType === "Call") {
+        if(optionsType === "call") {
             tokenA = basetoken;
             tokenB = tradedToken;
-        } else if(optionsType === "Put") {
+        } else if(optionsType === "put") {
             tokenA = tradedToken;
             tokenB = basetoken;
         }
