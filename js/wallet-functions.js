@@ -249,7 +249,7 @@ const contractFunctions =  function() {
         let amount = new BigNumber(tokenAmount).multipliedBy(Math.pow(10, tradedTokenDecimals));
         let limitTokenA = toFixedNumber(parseFloat(tokenAmountInBase.multipliedBy(Math.pow(10, baseTokenDecimals))));
         let limitTokenB = toFixedNumber(parseFloat(amount));
-        let premium = toFixedNumber(parseFloat(new BigNumber(premium).multipliedBy(Math.pow(10, baseTokenDecimals))));
+        let premium = toFixedNumber(parseFloat(new BigNumber(premiumVal).multipliedBy(Math.pow(10, baseTokenDecimals))));
         let makerIsSeller = optionsType2 === "sell" ? "true" : "false";
 
         if(optionsType === "call") {
