@@ -211,6 +211,9 @@ const contractFunctions =  function() {
     let optionsType2 = localStorage.getItem("createBuySell");
       
     let inputs = $('.place-order input');
+    let strike_price = parseFloat(inputs[5].value); 
+    let premium = parseFloat(inputs[6].value);
+    let amount = parseFloat(inputs[7].value);
     
     if(!timeframe) {
         alert("Timeframe not selected!");
@@ -224,12 +227,6 @@ const contractFunctions =  function() {
         alert("Options Type not selected");
     }
 
-    if(baseTokenName === "EURT") {
-        baseTokenName = "EUR";
-    } else if(baseTokenName === "USDT") {
-        baseTokenName = "USD";
-    }
-
     let getURL = "https://api.coinmarketcap.com/v1/ticker/" + tradedTokenName + "/?convert=" + baseTokenName;
 
     $.get(getURL, function(tokenInfo) {
@@ -237,14 +234,10 @@ const contractFunctions =  function() {
         let marketPrice;
 
         if(baseTokenName === "ETH") {
-            marketPrice = tokenInfo[0].price_eth;
-        } else if(baseTokenName === "USD") {
-            marketPrice = tokenInfo[0].price_usd;
-        } else if(baseTokenName === "EUR") {
-            marketPrice = tokenInfo[0].price_eur;
+            marketPrice = parseFloat(tokenInfo[0].price_eth);
         }
-      
-        let volatility = getCallVolatility(parseFloat(inputs[5].value), parseFloat(inputs[7].value), parseFloat(marketPrice), parseFloat(inputs[6].value));
+        
+        let volatility = getCallVolatility(amount,premium,marketPrice,strike_price);
 
         if(volatility === -1) {
             alert("Invalid Orders");
