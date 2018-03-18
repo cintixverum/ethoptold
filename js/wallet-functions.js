@@ -142,6 +142,7 @@ const contractFunctions =  function() {
     let lookup_index = [(log_pr - lookup_pr_start) / lookup_pr_step,
         (log_sr - lookup_sr_start) / lookup_sr_step
     ];
+    console.log(lookup_index);  
     if((lookup_index[0] < 0) || (lookup_index[0] >= 20) || (lookup_index[1] < 0) || (lookup_index[0] >= 20)) {
         return -1;
     }
