@@ -92,9 +92,9 @@ const contractFunctions =  function() {
     let maturation_expiration  = [order.maturation,order.expiration];
     let makerIsSeller = order.makerIsSeller;
     let premiumIsTokenA = order.premiumIsTokenA;
-    console.log(contract.fillOptionOrder);
-    console.log(tokenA_tokenB_maker,limitTokenA_limitTokenB_premium,maturation_expiration,makerIsSeller,premiumIsTokenA);
-    let data = contract.fillOptionOrder.getData(tokenA_tokenB_maker,limitTokenA_limitTokenB_premium,maturation_expiration,makerIsSeller,premiumIsTokenA);	
+    let v = order.v;
+    let r_s = [order.r,order.s];
+    let data = contract.fillOptionOrder.getData(tokenA_tokenB_maker,limitTokenA_limitTokenB_premium,maturation_expiration,makerIsSeller,premiumIsTokenA,v,r_s);	
     let Tx = {
        from: userAddress,
        to: contractAddress,
