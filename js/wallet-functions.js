@@ -266,7 +266,7 @@ const contractFunctions =  function() {
             'tokenA': tokenA,
             'tokenADecimals': baseTokenDecimals,
             'tokenB': tokenB,
-            'tokenBDecimals': tradedTokenName,
+            'tokenBDecimals': tradedTokenDecimals,
             'maker': userAddress,
             'limitTokenA': limitTokenA,
             'limitTokenB': limitTokenB,
