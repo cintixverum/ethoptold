@@ -211,6 +211,7 @@ const contractFunctions =  function() {
     let optionsType2 = localStorage.getItem("createBuySell");
       
     let inputs = $('.place-order input');
+    console.log(inputs);  
     let strike_price = parseFloat(inputs[5].value); 
     let premium = parseFloat(inputs[6].value);
     let tokenAmount = parseFloat(inputs[7].value);
