@@ -213,7 +213,8 @@ const contractFunctions =  function() {
     let inputs = $('.place-order input');
     let strike_price = parseFloat(inputs[5].value); 
     let premium = parseFloat(inputs[6].value);
-    let amount = parseFloat(inputs[7].value);
+    let tokenAmount = parseFloat(inputs[7].value);
+    console.log(tokenAmount);
     
     if(!timeframe) {
         alert("Timeframe not selected!");
@@ -237,18 +238,18 @@ const contractFunctions =  function() {
             marketPrice = parseFloat(tokenInfo[0].price_eth);
         }
         
-        let volatility = getCallVolatility(amount,premium,marketPrice,strike_price);
+        let volatility = getCallVolatility(tokenAmount,premium,marketPrice,strike_price);
 
         if(volatility === -1) {
             alert("Invalid Orders");
             return;
         }
 
-        let tokenAmountInBase = new BigNumber(inputs[5].value).multipliedBy(parseFloat(inputs[6].value));
-        let amount = new BigNumber(inputs[5].value).multipliedBy(Math.pow(10, tokenDecimals));
+        let tokenAmountInBase = new BigNumber(tokenAmount).multipliedBy(strike_price);
+        let amount = new BigNumber(tokenAmount).multipliedBy(Math.pow(10, tradedTokenDecimals));
         let limitTokenA = toFixedNumber(parseFloat(tokenAmountInBase.multipliedBy(Math.pow(10, baseTokenDecimals))));
         let limitTokenB = toFixedNumber(parseFloat(amount));
-        let premium = toFixedNumber(parseFloat(new BigNumber(inputs[7].value).multipliedBy(Math.pow(10, baseTokenDecimals))));
+        let premium = toFixedNumber(parseFloat(new BigNumber(premium).multipliedBy(Math.pow(10, baseTokenDecimals))));
         let makerIsSeller = optionsType2 === "sell" ? "true" : "false";
 
         if(optionsType === "call") {
