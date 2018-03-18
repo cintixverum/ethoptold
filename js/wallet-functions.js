@@ -208,8 +208,8 @@ const contractFunctions =  function() {
     let timeframeQuery = "option[date='" + localStore.getItem("timeframe") + "']";
     let timeframe = parseInt(Date.now()/1000) + parseInt($(timeframeQuery).attr("timeseconds")); 
 
-    let maturation = toFixedNumber(timeframe);
-    let expiration = toFixedNumber(parseInt(Date.now() / 1000) + parseInt(inputs[2].value) * 60 * 60);  
+    let maturation = timeframe;
+    let expiration = parseInt(Date.now() / 1000) + parseInt(inputs[2].value) * 60 * 60;  
       
     let optionsType = localStorage.getItem("createCallPut");      
     let optionsType2 = localStorage.getItem("createBuySell");
