@@ -31,8 +31,10 @@ option {
   font-weight:600;
 }
 
-#orderbook tr {
+#orderbook tr:hover {
   cursor:pointer;
+  background-color:#f2f2f2;
+  color:white;	
 }	
 
 #search-dropdown p {
