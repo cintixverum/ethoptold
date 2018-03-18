@@ -243,18 +243,18 @@ const contractFunctions =  function() {
             marketPrice = tokenInfo[0].price_eur;
         }
       
-        let volatility = getCallVolatility(parseFloat(inputs[3].value), parseFloat(inputs[5].value), parseFloat(marketPrice), parseFloat(inputs[4].value));
+        let volatility = getCallVolatility(parseFloat(inputs[5].value), parseFloat(inputs[7].value), parseFloat(marketPrice), parseFloat(inputs[6].value));
 
         if(volatility === -1) {
             alert("Invalid Orders");
             return;
         }
 
-        let tokenAmountInBase = new BigNumber(inputs[3].value).multipliedBy(parseFloat(inputs[4].value));
-        let amount = new BigNumber(inputs[3].value).multipliedBy(Math.pow(10, tokenDecimals));
+        let tokenAmountInBase = new BigNumber(inputs[5].value).multipliedBy(parseFloat(inputs[6].value));
+        let amount = new BigNumber(inputs[5].value).multipliedBy(Math.pow(10, tokenDecimals));
         let limitTokenA = toFixedNumber(parseFloat(tokenAmountInBase.multipliedBy(Math.pow(10, baseTokenDecimals))));
         let limitTokenB = toFixedNumber(parseFloat(amount));
-        let premium = toFixedNumber(parseFloat(new BigNumber(inputs[5].value).multipliedBy(Math.pow(10, baseTokenDecimals))));
+        let premium = toFixedNumber(parseFloat(new BigNumber(inputs[7].value).multipliedBy(Math.pow(10, baseTokenDecimals))));
         let makerIsSeller = optionsType2 === "sell" ? "true" : "false";
 
         if(optionsType === "call") {
@@ -275,7 +275,7 @@ const contractFunctions =  function() {
             'limitTokenB': limitTokenB,
             'premium': premium,
             'maturation': toFixedNumber(timeframe),
-            'expiration': toFixedNumber(parseInt(Date.now() / 1000) + parseInt(inputs[6].value) * 60 * 60),
+            'expiration': toFixedNumber(parseInt(Date.now() / 1000) + parseInt($('#expiration').val()) * 60 * 60),
             'makerIsSeller': makerIsSeller,
             'premiumIsTokenA': "true",
             'volatility': volatility,
