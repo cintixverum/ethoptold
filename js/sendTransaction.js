@@ -12,6 +12,7 @@ function sendTransaction(Tx,callback) {
 function sendTransactionCallback(Tx,callback) {
   web3.eth.sendTransaction(Tx, function(err,transactionHash) {
     if (err || !transactionHash) return;
+    console.log("sendTransactionCallback");
     let filter = web3.eth.filter('latest')
     filter.watch(function(error, result) {
       if (!error) {
