@@ -36,6 +36,10 @@ option {
   background-color:#f2f2f2;
 }	
 
+#orderbook tr .selected {
+  background-color:#f2f2f2;	
+}	
+
 #search-dropdown p {
   cursor:pointer;
   padding:3% 3% 3% 3%;
