@@ -16,7 +16,7 @@ $("#imaginary_container > div:nth-child(1) > input").keyup(function() {
         $('.depositToken').text(localStore.getItem("depositToken"));
         $("#imaginary_container > div:nth-child(1) > input").val('');      
         $("#search-dropdown").hide();
-        walletFunctions.getBalance(loadBalance);
+        contractFunctions.getWalletBalance(loadBalance);
       }        
     });
   });
