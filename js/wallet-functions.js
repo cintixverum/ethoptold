@@ -206,12 +206,14 @@ const contractFunctions =  function() {
     
     let timeframeQuery = "option[date='" + localStore.getItem("timeframe") + "']";
     let timeframe = parseInt(Date.now()/1000) + parseInt($(timeframeQuery).attr("timeseconds")); 
-    
+
+    let maturation = toFixedNumber(timeframe);
+    let expiration = toFixedNumber(parseInt(Date.now() / 1000) + parseInt(inputs[2].value) * 60 * 60);  
+      
     let optionsType = localStorage.getItem("createCallPut");      
     let optionsType2 = localStorage.getItem("createBuySell");
       
     let inputs = $('input.form-control');
-    console.log(inputs);  
     let strike_price = parseFloat(inputs[3].value); 
     let premiumVal = parseFloat(inputs[4].value);
     let tokenAmount = parseFloat(inputs[5].value);
@@ -254,9 +256,9 @@ const contractFunctions =  function() {
 
         if(optionsType === "call") {
             tokenA = basetoken;
-            tokenB = tradedToken;
+            tokenB = tradedtoken;
         } else if(optionsType === "put") {
-            tokenA = tradedToken;
+            tokenA = tradedtoken;
             tokenB = basetoken;
         }
 
@@ -269,8 +271,8 @@ const contractFunctions =  function() {
             'limitTokenA': limitTokenA,
             'limitTokenB': limitTokenB,
             'premium': premium,
-            'maturation': toFixedNumber(timeframe),
-            'expiration': toFixedNumber(parseInt(Date.now() / 1000) + parseInt(inputs[2].value) * 60 * 60),
+            'maturation': maturation,
+            'expiration': expiration,
             'makerIsSeller': makerIsSeller,
             'premiumIsTokenA': "true",
             'volatility': volatility,
