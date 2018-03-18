@@ -212,9 +212,9 @@ const contractFunctions =  function() {
       
     let inputs = $('input.form-control');
     console.log(inputs);  
-    let strike_price = parseFloat(inputs[1].value); 
-    let premium = parseFloat(inputs[2].value);
-    let tokenAmount = parseFloat(inputs[3].value);
+    let strike_price = parseFloat(inputs[3].value); 
+    let premium = parseFloat(inputs[4].value);
+    let tokenAmount = parseFloat(inputs[5].value);
     console.log(tokenAmount);
     
     if(!timeframe) {
@@ -271,7 +271,7 @@ const contractFunctions =  function() {
             'limitTokenB': limitTokenB,
             'premium': premium,
             'maturation': toFixedNumber(timeframe),
-            'expiration': toFixedNumber(parseInt(Date.now() / 1000) + parseInt(inputs[1].value) * 60 * 60),
+            'expiration': toFixedNumber(parseInt(Date.now() / 1000) + parseInt(inputs[2].value) * 60 * 60),
             'makerIsSeller': makerIsSeller,
             'premiumIsTokenA': "true",
             'volatility': volatility,
