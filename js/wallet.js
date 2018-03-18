@@ -21,3 +21,4 @@ $("input[value='Deposit']").on('click', function() {
     depositTokenAddress === "0x0000000000000000000000000000000000000000" ? walletFunctions.withdrawETH(value) : walletFunctions.withdrawToken(depositTokenAddress,value);     
   }  
 });
+
