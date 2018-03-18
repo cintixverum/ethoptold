@@ -203,7 +203,7 @@ const contractFunctions =  function() {
     let tradedTokenDecimals = $(tradedTokenQuery).attr("decimals");        
     let tradedtoken = $(tradedTokenQuery).attr("address");
     
-    let timeframeQuery = "option[date='" + localStore.getItem("orderTimeframe") + "']";
+    let timeframeQuery = "option[date='" + localStore.getItem("timeframe") + "']";
     let timeframe = parseInt(Date.now()/1000) + parseInt($(timeframeQuery).attr("timeseconds")); 
     
     let optionsType = localStorage.getItem("createCallPut");      
