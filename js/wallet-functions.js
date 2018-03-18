@@ -192,6 +192,7 @@ const contractFunctions =  function() {
 }
   
   function create() {        
+    let inputs = $('input.form-control');      
     let userAddress = localStorage.getItem("userAddress");
     
     let baseTokenName =  localStore.getItem("baseToken");
@@ -213,7 +214,6 @@ const contractFunctions =  function() {
     let optionsType = localStorage.getItem("createCallPut");      
     let optionsType2 = localStorage.getItem("createBuySell");
       
-    let inputs = $('input.form-control');
     let strike_price = parseFloat(inputs[3].value); 
     let premiumVal = parseFloat(inputs[4].value);
     let tokenAmount = parseFloat(inputs[5].value);
