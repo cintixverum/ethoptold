@@ -275,7 +275,7 @@ const contractFunctions =  function() {
             'limitTokenB': limitTokenB,
             'premium': premium,
             'maturation': toFixedNumber(timeframe),
-            'expiration': toFixedNumber(parseInt(Date.now() / 1000) + parseInt($('#expiration').val()) * 60 * 60),
+            'expiration': toFixedNumber(parseInt(Date.now() / 1000) + parseInt(inputs[4].value) * 60 * 60),
             'makerIsSeller': makerIsSeller,
             'premiumIsTokenA': "true",
             'volatility': volatility,
