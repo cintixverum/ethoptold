@@ -210,11 +210,11 @@ const contractFunctions =  function() {
     let optionsType = localStorage.getItem("createCallPut");      
     let optionsType2 = localStorage.getItem("createBuySell");
       
-    let inputs = $('.place-order input');
+    let inputs = $('.place-order .form-control input');
     console.log(inputs);  
-    let strike_price = parseFloat(inputs[5].value); 
-    let premium = parseFloat(inputs[6].value);
-    let tokenAmount = parseFloat(inputs[7].value);
+    let strike_price = parseFloat(inputs[1].value); 
+    let premium = parseFloat(inputs[2].value);
+    let tokenAmount = parseFloat(inputs[3].value);
     console.log(tokenAmount);
     
     if(!timeframe) {
@@ -271,7 +271,7 @@ const contractFunctions =  function() {
             'limitTokenB': limitTokenB,
             'premium': premium,
             'maturation': toFixedNumber(timeframe),
-            'expiration': toFixedNumber(parseInt(Date.now() / 1000) + parseInt(inputs[4].value) * 60 * 60),
+            'expiration': toFixedNumber(parseInt(Date.now() / 1000) + parseInt(inputs[1].value) * 60 * 60),
             'makerIsSeller': makerIsSeller,
             'premiumIsTokenA': "true",
             'volatility': volatility,
