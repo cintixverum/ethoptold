@@ -3130,7 +3130,7 @@ tbody.collapse.in{
     margin-left:0
 }
 
-.btn-group>.btn:last-child:not(:first-child),.btn-group>.dropdown-toggle:not(:first-child){
+.btn-group>.btn:last-child:not(:first-child):not(#ordersTab),.btn-group>.dropdown-toggle:not(:first-child){
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     color: #b1b2b6;
