@@ -19,8 +19,7 @@ function getMyOrders() {
               $('#positionsTable').append(newRow);
             }
         });
-        
-        console.log($('#positionsTable > tbody > tr'));
+        console.log($('#ordersTable > tbody > tr'));
     
         $('#positionsTable > tbody > tr').on('click', function() {
           console.log($(this));
