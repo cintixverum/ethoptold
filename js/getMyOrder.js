@@ -14,9 +14,9 @@ function getMyOrders() {
             let callPut = arr.makerIsSeller === "true" ? "Call" : "Put";
             let isMaker = arr.maker === "userAddress" ? "Yes" : "No";
             let newRow = '<tr order="' + JSON.stringify(arr).replace(/"/g, "'") + '"><th>' + tradedTokenName + '</th><th>' + callPut  + '</th><th>' + purchaseTimestamp + '</th><th>' + maturation + '</th><th>' + isMaker + '</th></tr>';
-            $('#ordersList > table').append(newRow);
+            $('#ordersTable').append(newRow);
             if(arr.expiration >= currentTime && arr.maturation >= currentTime) {
-              $('#positionsTab > table').append(newRow);
+              $('#positionsTable').append(newRow);
             }
         });
   });
