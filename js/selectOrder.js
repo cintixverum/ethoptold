@@ -3,9 +3,11 @@ $('#orderbook tr').on('click', function() {
 });  
 
 $('#positionsTab tr').on('click', function() {
+  console.log($(this));
   $(this).addClass('selected2');
 });  
 
 $('#ordersList tr').on('click', function() {
+  console.log($(this));  
   $(this).addClass('selected2');
 });  
