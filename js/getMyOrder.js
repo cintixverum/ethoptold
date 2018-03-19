@@ -15,7 +15,8 @@ function getMyOrders() {
             let purchaseTimestamp = new Date(parseInt(arr.purchaseTimestamp)).toUTCString();
             let tokenName = baseTokenAddress === arr.tokenB ? arr.tokenA : arr.tokenB;
             let callPut = arr.makerIsSeller === "true" ? "Call" : "Put";
-            let newRow = '<tr order="' + JSON.stringify(arr).replace(/"/g, "'") + '"><th>' + tokenName + '</th><th>' + callPut  + '</th><th>' + maturation + '</th><th>' + purchaseTimestamp + '</th><th>No</th></tr>';
+            let isMaker = arr.maker === "userAddress" ? "Yes" : "No";
+            let newRow = '<tr order="' + JSON.stringify(arr).replace(/"/g, "'") + '"><th>' + tokenName + '</th><th>' + callPut  + '</th><th>' + maturation + '</th><th>' + purchaseTimestamp + '</th><th>' + isMaker + '</th></tr>';
             $('#ordersList > table').append(newRow);
         });
   });
