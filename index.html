@@ -1,380 +1,398 @@
 <!DOCTYPE html>
 <html>
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
-	<meta content="text/html; charset=utf-8" http-equiv="content-type">
 	<meta charset="utf-8">
-	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Admin - Dashboard</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
-	<link href="css/jquery-ui.css" rel="stylesheet"><!--Custom Font-->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"><!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
-
-	<script src="js/main.js">
-	</script>
-	<script src="https://rawgit.com/MikeMcl/bignumber.js/master/bignumber.js">
-	</script>
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	
+	<!--Custom Font-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	<script src="js/main.js"></script>
+	<script src="https://rawgit.com/MikeMcl/bignumber.js/master/bignumber.js"></script>	
 </head>
 <body id="body">
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<button class="navbar-toggle collapsed" data-target="#sidebar-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
-				<div class="row">
-					<div class="col-md-5 col-sm-4 col-xs-6">
-						<h3 class="optionsLogo" style="color:black;font-weight:bold;padding-left:20px;">Options<span style="color:#ccc;">Dex</span></h3><!--<div class="dark-light">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse"><span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span></button>
+					<div class="row">
+					<div class="col-md-5 col-sm-4  col-xs-6">
+                                        <h3 style="color:black;font-weight:bold;padding-left:20px;" class="optionsLogo">Options<span style="color:#ccc;">Dex</span></h3>
+					<!--<div class="dark-light">
 <span class="dark" >Light</span><label class="switch">
   <input type="checkbox">
   <span class="slider round" onclick="toggleDarkLight()" ></span>
 </label><span class="light">Dark</span>
-                    </div>-->
+					</div>-->
 					</div>
+					
 					<div class="col-md-3 col-sm-3 col-xs-3 hidden-xs">
-						<div id="imaginary_container">
-							<div class="input-group stylish-input-group">
-								<input class="form-control" placeholder="Search assets" type="text"> <span class="input-group-addon"><button type="submit"><span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span></button></span>
-							</div>
-							<div class="input-group stylish-input-group" id="search-dropdown" style="width:100%;border:1px #f2f2f2 solid;background-color:white;font-size:13px;font-weight:600;display:none;"></div>
-						</div>
+					<div id="imaginary_container"> 
+                <div class="input-group stylish-input-group">
+                    <input type="text" class="form-control"  placeholder="Search assets" >
+                    <span class="input-group-addon">
+                        <button type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>  
+                    </span>
+                </div>
+		<div id="search-dropdown" class="input-group stylish-input-group" style="width:100%;border:1px #f2f2f2 solid;background-color:white;font-size:13px;font-weight:600;display:none;">
+                </div>				
+            </div>
 					</div>
+					
+					
 					<div class="col-md-4 col-sm-5 col-xs-6">
-						<div class="user-side">
-							<ul class="list-inline">
-								<li class="active hidden-xs">
-									<a href="#">Dashboard</a>
-								</li>
-								<li class="hidden-xs">
-									<a href="wallet.html">Wallet</a>
-								</li>
-								<li class="hidden-xs">
-									<a href="#" id="metamask">Metamask Locked</a>
-								</li>
-							</ul>
-						</div>
+					<div class="user-side">
+					<ul class="list-inline">
+					<li class="active hidden-xs"><a href="#">Dashboard</a></li>
+					<li class="hidden-xs"><a href="wallet.html">Wallet</a></li>
+					<li class="hidden-xs"><a href="#" id="metamask">Metamask Locked</a></li>
 					</div>
-				</div>
+					
+					</div>
+					
+					
+					</div>
+				
+				
 			</div>
 		</div><!-- /.container-fluid -->
 	</nav>
-	<div class="ser-bo" id="imaginary_container">
-		<div class="input-group stylish-input-group">
-			<input class="form-control" placeholder="Search assets" type="text"> <span class="input-group-addon"><button type="submit"><span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span></button></span>
-		</div>
-	</div>
-	<div class="col-sm-3 col-lg-2 layer" id="sidebar-collapse">
+	
+
+  	  <div id="imaginary_container" class="ser-bo"> 
+                <div class="input-group stylish-input-group">
+                    <input type="text" class="form-control" placeholder="Search assets">
+                    <span class="input-group-addon">
+                        <button type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>  
+                    </span>
+                </div>
+            </div>
+
+	
+
+	
+	
+	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 layer">
+		
+		
 		<ul class="nav menu bid-na visible-xs">
-			<li class="active">
-				<a href="#">Dashboard</a>
-			</li>
-			<li>
-				<a href="wallet.html">Wallet</a>
-			</li>
-			<li>
-				<a href="#">Settings</a>
-			</li>
+			<li class="active"><a href="#">Dashboard</a></li>
+					<li><a href="wallet.html">Wallet</a></li>
+					<li><a href="#">Settings</a></li>
+			
 		</ul>
 	</div><!--/.sidebar-->
-	<div class="main">
-		<div style="display:inline-block;margin-bottom:1%;">
-			<select class="form-control" id="timeframe" style="background-color:white;color:#212121;font-size:13px;font-weight:600;">
-				<option>
-					Select Timeframe
-				</option>
-				<option>
-					1D
-				</option>
-				<option>
-					7D
-				</option>
-				<option>
-					1M
-				</option>
-				<option>
-					3M
-				</option>
-				<option>
-					1Y
-				</option>
-			</select>
-		</div>
-		<div style="display:inline-block;margin-bottom:1%;float:right">
-			<select class="form-control" id="baseToken" style="background-color:white;color:#212121;font-size:13px;font-weight:600;">
-				<option>
-					Base Token
-				</option>
-				<option>
-					ETH
-				</option>
-				<option>
-					DAI
-				</option>
-			</select>
-		</div>
+		
+	<div class="main">		
+		
+					<div style="display:inline-block;margin-bottom:1%;">
+                                          <select id="timeframe" class="form-control" style="background-color:white;color:#212121;font-size:13px;font-weight:600;">
+                                            <option>Select Timeframe</option>
+                                            <option date="1D" timeseconds="86400">1D</option>						  
+                                            <option date="7D" timeseconds="604800">7D</option>
+                                            <option date="1M" timeseconds="2700000">1M</option>
+                                            <option date="3M" timeseconds="8100000">3M</option>
+                                            <option date="1Y" timeseconds="32400000">1Y</option>
+                                          </select>
+					</div>	
+					<div style="display:inline-block;margin-bottom:1%;float:right">
+                                          <select id="baseToken" class="form-control" style="background-color:white;color:#212121;font-size:13px;font-weight:600;">
+                                            <option>Base Token</option>
+                                            <option>ETH</option>
+                                            <option>DAI</option>
+                                          </select>
+					</div>	
 		<div class="row">
-			<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
-				<div class="place-order">
-					<h3>Create Order</h3>
-					<div class="btn-group" data-toggle="buttons" id="createBuySell">
-						<label class="btn btn-default btn-on btn-sm active"><input checked="checked" name="multifeatured_module[module_id][status]" type="radio" value="buy">Buy</label> <label class="btn btn-default btn-off btn-sm"><input name="multifeatured_module[module_id][status]" type="radio" value="sell">Sell</label>
-					</div>
-					<div class="btn-group" data-toggle="buttons" id="createCallPut">
-						<label class="btn btn-default btn-on btn-sm active"><input checked="checked" name="multifeatured_module[module_id][status]" type="radio" value="call">Call</label> <label class="btn btn-default btn-off btn-sm"><input name="multifeatured_module[module_id][status]" type="radio" value="put">Put</label>
-					</div>
-					<form action="" class="place-order-form" method="">
-						<div class="form-group">
-							<label>Expiration</label>
-							<div class="input-group">
-								<input class="form-control" max="24" min="1" placeholder="Hours" type="number">
-							</div>
-						</div>
-						<div class="form-group">
-							<label>Strike Price</label>
-							<div class="input-group">
-								<input class="form-control" placeholder="$0.00" type="text"> <span class="input-group-addon"><span class="baseToken"></span></span>
-							</div>
-						</div>
-						<div class="form-group">
-							<label>Premium</label>
-							<div class="input-group">
-								<input class="form-control" placeholder="$0.00" type="text"> <span class="input-group-addon"><span class="baseToken"></span></span>
-							</div>
-						</div>
-						<div class="form-group">
-							<label>Amount</label>
-							<div class="form-group input-group">
-								<input class="form-control" placeholder="$0.00" type="text"> <span class="input-group-addon"><span class="tradedToken"></span></span>
-							</div>
-						</div>
-						<div class="total">
-							<p>TOTAL</p>
-							<div class="total-amount">
-								<div class="row">
-									<div class="col-md-4">
-										<p class="baseToken" style="float:left;"></p>
-									</div>
-									<div class="col-md-8">
-										<span>0/$0.00</span>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-4">
-										<p class="tradedToken" style="float:left;"></p>
-									</div>
-									<div class="col-md-8">
-										<span>0/$0.00</span>
-									</div>
-								</div>
-							</div>
-						</div><input class="submit" value="Place Order">
-					</form>
-				</div>
-			</div>
+		<div class="col-lg-4  col-md-5 col-sm-12 col-xs-12">
+		<div class="place-order">
+		<h3>Create Order</h3>
+		  <div class="btn-group" id="createBuySell" data-toggle="buttons">
+              <label class="btn btn-default btn-on btn-sm active">
+              <input type="radio" value="buy" name="multifeatured_module[module_id][status]" checked="checked">Buy</label>
+              <label class="btn btn-default btn-off btn-sm ">
+              <input type="radio" value="sell" name="multifeatured_module[module_id][status]">Sell</label>
+            </div>
+			<div class="btn-group" id="createCallPut" data-toggle="buttons">
+              <label class="btn btn-default btn-on btn-sm active">
+              <input type="radio" value="call" name="multifeatured_module[module_id][status]" checked="checked">Call</label>
+              <label class="btn btn-default btn-off btn-sm ">
+              <input type="radio" value="put" name="multifeatured_module[module_id][status]">Put</label>
+            </div>
+			<form class="place-order-form" action="" method="">
+			<div class="form-group ">
+					<label>Expiration</label>			
+      <div class ="input-group">
+	  
+         <input type="number" min="1" max="24" class="form-control" placeholder="Hours">
+      </div>
+</div>	
+				
+					<div class="form-group ">
+					<label>Strike Price</label>			
+      <div class ="input-group">
+	  
+         <input type = "text" class = "form-control" placeholder="$0.00">
+	      <span class = "input-group-addon"><span class="baseToken"></span></span>
+      </div>
+</div>	 
+				
+<div class="form-group ">
+					<label>Premium</label>			
+      <div class ="input-group">
+	  
+         <input type = "text" class = "form-control" placeholder="$0.00">
+	      <span class = "input-group-addon"><span class="baseToken"></span></span>
+      </div>
+</div>					
+				
+<div class="form-group "> 
+<label>Amount</label>	  
+      <div class ="form-group input-group">
+	  
+         <input type = "text" class = "form-control" placeholder="$0.00">
+	      <span class = "input-group-addon"><span class="tradedToken"></span></span>
+      </div>
+	  </div>								
+	  
+	  <div class="total">
+	  <p>TOTAL</p>
+	  <div class="total-amount">
+	  <div class="row">
+	  <div class="col-md-4">
+	  <p class="baseToken" style="float:left;"></p>
+	  </div> 
+	  <div class="col-md-8">
+	  <span>0/$0.00</span>
+	  </div>
+	  </div> 
+	  <div class="row">
+	  <div class="col-md-4">
+	  <p class="tradedToken" style="float:left;"></p>
+	  </div> 
+	  <div class="col-md-8">
+	  <span>0/$0.00</span>
+	  </div>
+	  </div>
+	  </div>
+	  </div>
+	  <input class="submit" value="Place Order">
+	  
+			</form>
+		</div>
+		</div>
+		
 			<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<span class="baseToken"></span><span style="font-size:14px;">/</span><span class="tradedToken"></span>
 						<ul class="pull-right panel-settings panel-button-tab-right">
-							<li class="dropdown">
-								<a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#"><em class="fa fa-cogs"></em></a>
+							<li class="dropdown"><a class="pull-right dropdown-toggle" data-toggle="dropdown" href="#">
+								<em class="fa fa-cogs"></em>
+							</a>
 								<ul class="dropdown-menu dropdown-menu-right">
 									<li>
 										<ul class="dropdown-settings">
-											<li>
-												<a href="#"><em class="fa fa-cog"></em> Settings 1</a>
-											</li>
+											<li><a href="#">
+												<em class="fa fa-cog"></em> Settings 1
+											</a></li>
 											<li class="divider"></li>
-											<li>
-												<a href="#"><em class="fa fa-cog"></em> Settings 2</a>
-											</li>
+											<li><a href="#">
+												<em class="fa fa-cog"></em> Settings 2
+											</a></li>
 											<li class="divider"></li>
-											<li>
-												<a href="#"><em class="fa fa-cog"></em> Settings 3</a>
-											</li>
+											<li><a href="#">
+												<em class="fa fa-cog"></em> Settings 3
+											</a></li>
 										</ul>
 									</li>
 								</ul>
 							</li>
-						</ul><span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span>
-					</div>
+						</ul>
+						<span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span></div>
 					<div class="panel-body">
 						<div class="canvas-wrapper">
-							<canvas class="main-chart" height="298" id="line-chart" width="600"></canvas>
+							<canvas class="main-chart" id="line-chart" height="298" width="600"></canvas>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div><!--/.row-->
+		
 		<div class="row position">
-			<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
-				<div class="place-order positions">
-					<h3>Positions</h3>
-					<div class="btn-group" data-toggle="buttons" id="status">
-						<label class="btn btn-default btn-on btn-sm active"><input checked="checked" name="multifeatured_module[module_id][status]" type="radio" value="1">Trade</label> <label class="btn btn-default btn-on btn-sm"><input checked="checked" name="multifeatured_module[module_id][status]" type="radio" value="1">Positions</label> <label class="btn btn-default btn-on btn-sm" id="ordersTab"><input checked="checked" name="multifeatured_module[module_id][status]" type="radio" value="1">Orders</label>
-					</div>
-					<div id="tradeTab">
-						<form action="" class="place-order-form" method="">
-							<div class="form-group">
-								<select class="form-control">
-				                                  <option>Select Token</option>
-								</select>
-								<label>Balance</label>
-     							        <input class="form-control" placeholder="0.00" type="text">
-								<label>Amount</label>
-								<input class="form-control" placeholder="0.00" type="text">
-							</div>								
-							<div class="total-amount">
-								<div class="row">
-									<div class="col-md-4">
-										<p class="baseToken" style="float:left;"></p>
-									</div>
-									<div class="col-md-8">
-										<span>0/$0.00</span>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-4">
-										<p class="tradedToken" style="float:left;"></p>
-									</div>
-									<div class="col-md-8">
-										<span>0/$0.00</span>
-									</div>
-								</div>
-						        <input class="submit" value="Trade">
-     						        </div>
-	
-						</form>
-					</div>
-					<div class="table-responsive mt-20" id="positionsTab" style="display:none">
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Volume</th>
-									<th>Value</th>
-									<th>Date</th>
-								</tr>
-							</thead>
-						</table>
-					</div>
-					<div class="table-responsive mt-20" id="ordersTab" style="display:none">
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Volume</th>
-									<th>Value</th>
-									<th>Date</th>
-								</tr>
-							</thead>
-						</table>
-					</div>
-				</div>
+		<div class="col-lg-4  col-md-5 col-sm-12 col-xs-12">
+		<div class="place-order positions">
+		<h3>Positions</h3>
+		  <div class="btn-group" id="status" data-toggle="buttons">
+              <label class="btn btn-default btn-on btn-sm active">
+              <input type="radio" value="1" name="multifeatured_module[module_id][status]" checked="checked">Trade</label>			  
+              <label class="btn btn-default btn-on btn-sm">
+              <input type="radio" value="1" name="multifeatured_module[module_id][status]" checked="checked">Positions</label>
+              <label class="btn btn-default btn-on btn-sm" id="ordersTab">
+              <input type="radio" value="1" name="multifeatured_module[module_id][status]" checked="checked">Orders</label>
+            </div>
+<div>			
+<form class="place-order-form" action="" method="">			
+					<div class="form-group ">
+					<label>Strike Price</label>			
+      <div class="input-group">
+	  
+         <input type="text" class="form-control" placeholder="$0.00">
+	      <span class="input-group-addon"><span class="baseToken">ETH</span></span>
+      </div>
+</div>	 
+				
+<div class="form-group ">
+					<label>Premium</label>			
+      <div class="input-group">
+	  
+         <input type="text" class="form-control" placeholder="$0.00">
+	      <span class="input-group-addon"><span class="baseToken">ETH</span></span>
+      </div>
+</div>					
+				
+<div class="form-group "> 
+<label>Amount</label>	  
+      <div class="form-group input-group">
+	  
+         <input type="text" class="form-control" placeholder="$0.00">
+	      <span class="input-group-addon"><span class="tradedToken">VERITASEUM</span></span>
+      </div>
+	  </div>								
+	  
+	  <input class="submit" value="Place Order">
+	  
+			</form>
 			</div>
-			<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 order-book">
+			<div class="table-responsive mt-20" style="display:none">
+			<table class="table">
+			<thead>
+			<th>Volume</th>
+			<th>Value</th>
+			<th>Date</th>
+			</thead>
+			</table>
+			</div>
+			<div class="table-responsive mt-20" style="display:none">
+			<table class="table">
+			<thead>
+			<th>Volume</th>
+			<th>Value</th>
+			<th>Date</th>
+			</thead>
+			</table>
+			</div>			
+		</div>
+		</div>
+			<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12  order-book">
 				<div class="place-order">
-					<h3>Orderbook</h3>
-					<div class="btns">
-						<div class="btn-group" data-toggle="buttons" id="buySell">
-							<label class="btn btn-default btn-on btn-sm"><input checked="checked" name="multifeatured_module[module_id][status]" type="radio" value="buy">Buy</label> <label class="btn btn-default btn-off btn-sm"><input name="multifeatured_module[module_id][status]" type="radio" value="sell">Sell</label>
-						</div>
-						<div class="btn-group" data-toggle="buttons" id="optionType">
-							<label class="btn btn-default btn-on btn-sm"><input checked="checked" name="multifeatured_module[module_id][status]" type="radio" value="call">Call</label> <label class="btn btn-default btn-off btn-sm"><input name="multifeatured_module[module_id][status]" type="radio" value="put">Put</label>
-						</div>
-					</div>
-					<div class="table-responsive scroll mt-20" style="width:100%; float: left;">
-						<table class="table" id="orderbook">
-							<thead>
-								<tr>
-									<th>Premium/Premium %</th>
-									<th>Contract Size</th>
-									<th>Volatility %</th>
-									<th>Strike Price</th>
-									<th>Expiration</th>
-								</tr>
-							</thead>
-							<tbody></tbody>
-						</table>
-					</div>
+				<h3>Orderbook</h3>
+				<div class="btns">
+					<div class="btn-group" id="buySell" data-toggle="buttons">
+              <label class="btn btn-default btn-on btn-sm">
+              <input type="radio" value="buy" name="multifeatured_module[module_id][status]" checked="checked">Buy </label>
+              <label class="btn btn-default btn-off btn-sm ">
+              <input type="radio" value="sell" name="multifeatured_module[module_id][status]">Sell</label>
+					</div> 
+					<div class="btn-group" id="optionType" data-toggle="buttons">
+              <label class="btn btn-default btn-on btn-sm">
+              <input type="radio" value="call" name="multifeatured_module[module_id][status]" checked="checked">Call</label>
+              <label class="btn btn-default btn-off btn-sm ">
+              <input type="radio" value="put" name="multifeatured_module[module_id][status]">Put</label>
+            </div>
+				</div>
+			
+			<div class="table-responsive scroll mt-20" style="width:100%; float: left;">
+					<table class="table" id="orderbook" >
+					  <thead>
+				            <th>Premium/Premium %</th>
+					    <th>Contract Size</th>
+					    <th>Volatility %</th>
+					    <th>Strike Price</th>
+					    <th>Expiration</th>
+					  </thead>
+					  <tbody>																				
+					  </tbody>
+					</table>
+			</div>
 				</div>
 			</div>
 		</div><!--/.row-->
-	</div><!--/.main-->
-	<script src="js/jquery-1.11.1.min.js">
-	</script> 
-	<script src="js/bootstrap.min.js">
-	</script> 
-	<script src="js/chart.min.js">
-	</script> 
-	<script src="js/chart-data.js">
-	</script> 
-	<script src="js/easypiechart.js">
-	</script> 
-	<script src="js/easypiechart-data.js">
-	</script> 
-	<script src="js/bootstrap-datepicker.js">
-	</script> 
-	<script src="js/custom.js">
-	</script> 
-	<script src="js/scroll.js">
-	</script> 
-	<script src="js/metamask.js">
-	</script> 
-	<script src="js/sendTransaction.js">
-	</script> 
-	<script src="js/wallet-functions.js">
-	</script> 
-	<script src="js/storageFactory.js">
-	</script> 
-	<script src="js/updateOrderbook.js">
-	</script> 
-	<script src="js/dropdownListener.js">
-	</script> 
-	<script src="js/placeOrder.js">
-	</script> 
-	<script src="js/createOrderListener.js">
-	</script> 
-	<script src="js/searchResult.js">
-	</script> 
-	<script src="js/searchFilter.js">
-	</script> 
-	<script src="js/buttonListener.js">
-	</script> 
-	<script src="js/tableListener.js">
-	</script> 
-	<script src="js/tradeTabListener.js">
-	</script> 
-	<script>
-	       window.onload = function () {
-	     var chart1 = document.getElementById("line-chart").getContext("2d");
-	     window.myLine = new Chart(chart1).Line(lineChartData, {
-	       responsive: true,
-	       scaleLineColor: "rgba(0,0,0,.2)",
-	       scaleGridLineColor: "rgba(0,0,0,.05)",
-	       scaleFontColor: "#c5c7cc"
-	     });
-	       };
-	</script> 
-	<script src="js/jquery-ui.js">
-	</script> 
-	<script>
-	 $( function() {
-	   $( "#datepicker" ).datepicker();
-	 } );
-	 function toggleDarkLight() {
-	 var body = document.getElementById("body");
-	 var currentClass = body.className;
-	 body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
-	}
-	</script> 
-	<script>
-	$(document).ready(function(){
-	   $("#ser-btn").click(function(){
-	       $(".ser-bo").toggle();
-	   });     
-	});
+		
+		
+		
+	</div>	<!--/.main-->
+	
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/chart.min.js"></script>
+	<script src="js/chart-data.js"></script>
+	<script src="js/easypiechart.js"></script>
+	<script src="js/easypiechart-data.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/custom.js"></script>
+	<script src="js/scroll.js"></script>
+	<script src="js/metamask.js"></script>
+	<script src="js/sendTransaction.js"></script>	
+	<script src="js/wallet-functions.js"></script>	
+	<script src="js/storageFactory.js"></script>	
+	<script src="js/updateOrderbook.js"></script>	
+	<script src="js/dropdownListener.js"></script>
+	<script src="js/placeOrder.js"></script>	
+	<script src="js/createOrderListener.js"></script>	
+	<script src="js/searchResult.js"></script>
+	<script src="js/searchFilter.js"></script>	
+	<script src="js/buttonListener.js"></script>
+	<script src="js/tableListener.js"></script>
+	<script src="js/tradeTabListener.js"></script>	
+        <script>
+        window.onload = function () {
+  	  var chart1 = document.getElementById("line-chart").getContext("2d");
+   	  window.myLine = new Chart(chart1).Line(lineChartData, {
+	    responsive: true,
+	    scaleLineColor: "rgba(0,0,0,.2)",
+	    scaleGridLineColor: "rgba(0,0,0,.05)",
+	    scaleFontColor: "#c5c7cc"
+	  });
+        };
 	</script>
+	
+  <script src="js/jquery-ui.js"></script>	  
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  function toggleDarkLight() {
+  var body = document.getElementById("body");
+  var currentClass = body.className;
+  body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
+}
+  </script>
+			
+<script>
+$(document).ready(function(){
+    $("#ser-btn").click(function(){
+        $(".ser-bo").toggle();
+    });	    
+});
+</script>
+
 </body>
 </html>
