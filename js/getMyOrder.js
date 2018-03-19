@@ -1,5 +1,6 @@
 function getMyOrders() {
   let userAddress = localStorage.getItem("userAddress");
+  let currentTime = parseInt(Date.now()/1000);
   $.post('https://www.optionsdexapi.tk/getMyOrders', {
         'taker': userAddress
     }, function(data) {
