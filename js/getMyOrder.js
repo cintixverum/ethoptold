@@ -19,5 +19,6 @@ function getMyOrders() {
               $('#positionsTable').append(newRow);
             }
         });
-  });   
+  });
+  console.log($("#ordersTable > tbody > tr"));  
 }  
