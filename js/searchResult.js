@@ -8,6 +8,7 @@ $.get("https://www.optionsdexapi.tk/getApprovedTokens",function(tokenArray,statu
     $('.timeframe').text(localStore.getItem("timeframe"));
     if(window.location.href === "https://optionsdex.github.io/") {
       updateOrderbook();
+      getMyOrders();  
       localStore.getItem("buySell") === "buy" ? $('#buySell > label.btn.btn-default.btn-on.btn-sm').addClass('active') : $('#buySell > label.btn.btn-default.btn-off.btn-sm').addClass('active');
       localStore.getItem("optionType") === "put" ? $('#optionType > label.btn.btn-default.btn-off.btn-sm').addClass('active') : $('#optionType > label.btn.btn-default.btn-on.btn-sm').addClass('active');
     }       
