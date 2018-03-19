@@ -2,16 +2,12 @@ function updateOrderbook() {
   let tradedTokenQuery = "p[fullname='" + localStore.getItem("tradedToken") + "']";
   let baseTokenQuery = "p[fullname='" + localStore.getItem("baseToken") + "']";
   let timeframeQuery = "option[date='" + localStore.getItem("timeframe") + "']";
-  console.log(tradedTokenQuery,baseTokenQuery,timeframeQuery);
   let tradedTokenAddress = $(tradedTokenQuery).attr("address");
   let baseTokenAddress = $(baseTokenQuery).attr("address");
   let timeSeconds = $(timeframeQuery).attr("timeseconds");  
-  console.log(tradedTokenAddress,baseTokenAddress,timeSeconds);
   let data = {tokenA:null,tokenB:null,makerIsSeller:null,timeframe:timeSeconds};
   localStorage.getItem("buySell") === "sell" ? data.makerIsSeller = "true" : data.makerIsSeller = "false";
   localStorage.getItem("optionType") === "put" ? (data.tokenA = baseTokenAddress,data.tokenB = tradedTokenAddress) : (data.tokenB = baseTokenAddress, data.tokenA = tradedTokenAddress);    
-  console.log(data);
-  console.log(baseTokenAddress,tradedTokenAddress);	
   $.post("https://www.optionsdexapi.tk/getBuyOptions", data,
      function(optionsArray, status) {
          optionsArray.forEach(function(arr) {
