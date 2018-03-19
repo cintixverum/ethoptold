@@ -5,17 +5,18 @@ function getPositions() {
         'taker': userAddress
     }, function(data) {
         data.forEach(function(arr) {
-            if(arr.expiration < currentTime || arr.maturation < currentTime) return;
-            let tokenAddress =  arr.makerIsSeller === "true" ? arr.tokenB : arr.tokenA; 
-            let tradedTokenQuery = "p[address='" + tokenAddress + "']";
-            let tradedTokenName = $(tradedTokenQuery).attr("fullname");          
-            let timeframeQuery = "option[date='" + localStore.getItem("timeframe") + "']";
-            let maturation = new Date(parseInt(arr.maturation)*1000).toUTCString();
-            let purchaseTimestamp = new Date(parseInt(arr.purchaseTimestamp)).toUTCString();
-            let callPut = arr.makerIsSeller === "true" ? "Call" : "Put";
-            let isMaker = arr.maker === "userAddress" ? "Yes" : "No";
-            let newRow = '<tr order="' + JSON.stringify(arr).replace(/"/g, "'") + '"><th>' + tradedTokenName + '</th><th>' + callPut  + '</th><th>' + purchaseTimestamp + '</th><th>' + maturation + '</th><th>' + isMaker + '</th></tr>';
-            $('#ordersList > table').append(newRow);
+            if(arr.expiration >= currentTime && arr.maturation >= currentTime) {
+              let tokenAddress =  arr.makerIsSeller === "true" ? arr.tokenB : arr.tokenA; 
+              let tradedTokenQuery = "p[address='" + tokenAddress + "']";
+              let tradedTokenName = $(tradedTokenQuery).attr("fullname");          
+              let timeframeQuery = "option[date='" + localStore.getItem("timeframe") + "']";
+              let maturation = new Date(parseInt(arr.maturation)*1000).toUTCString();
+              let purchaseTimestamp = new Date(parseInt(arr.purchaseTimestamp)).toUTCString();
+              let callPut = arr.makerIsSeller === "true" ? "Call" : "Put";
+              let isMaker = arr.maker === "userAddress" ? "Yes" : "No";
+              let newRow = '<tr order="' + JSON.stringify(arr).replace(/"/g, "'") + '"><th>' + tradedTokenName + '</th><th>' + callPut  + '</th><th>' + purchaseTimestamp + '</th><th>' + maturation + '</th><th>' + isMaker + '</th></tr>';
+              $('#ordersList > table').append(newRow);
+            }  
         });
   });
 }  
