@@ -16,7 +16,7 @@ function getMyOrders() {
             let newRow = '<tr order="' + JSON.stringify(arr).replace(/"/g, "'") + '"><th>' + tradedTokenName + '</th><th>' + callPut  + '</th><th>' + purchaseTimestamp + '</th><th>' + maturation + '</th><th>' + isMaker + '</th></tr>';
             $('#ordersList > table').append(newRow);
             console.log(arr.expiration >= currentTime, arr.maturation >= currentTime);
-            if(arr.expiration >= currentTime && arr.maturation >= currentTime) {
+            if(arr.maturation >= currentTime) {
               console.log($('#positionsTab > table'));
               $('#positionsTab > table').append(newRow);
             }
