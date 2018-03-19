@@ -240,67 +240,74 @@
 		<div class="col-lg-4  col-md-5 col-sm-12 col-xs-12">
 		<div class="place-order positions">
 		<h3>Positions</h3>
-		  <div class="btn-group" id="status" data-toggle="buttons">
-              <label class="btn btn-default btn-on btn-sm active">
-              <input type="radio" value="1" name="multifeatured_module[module_id][status]" checked="checked">Trade</label>			  
-              <label class="btn btn-default btn-on btn-sm">
-              <input type="radio" value="1" name="multifeatured_module[module_id][status]" checked="checked">Positions</label>
-              <label class="btn btn-default btn-on btn-sm" id="ordersTab">
-              <input type="radio" value="1" name="multifeatured_module[module_id][status]" checked="checked">Orders</label>
-            </div>
-<div>			
-<form class="place-order-form" action="" method="">			
-					<div class="form-group ">
-					<label>Strike Price</label>			
-      <div class="input-group">
-	  
-         <input type="text" class="form-control" placeholder="$0.00">
-	      <span class="input-group-addon"><span class="baseToken">ETH</span></span>
-      </div>
-</div>	 
-				
-<div class="form-group ">
-					<label>Premium</label>			
-      <div class="input-group">
-	  
-         <input type="text" class="form-control" placeholder="$0.00">
-	      <span class="input-group-addon"><span class="baseToken">ETH</span></span>
-      </div>
-</div>					
-				
-<div class="form-group "> 
-<label>Amount</label>	  
-      <div class="form-group input-group">
-	  
-         <input type="text" class="form-control" placeholder="$0.00">
-	      <span class="input-group-addon"><span class="tradedToken">VERITASEUM</span></span>
-      </div>
-	  </div>								
-	  
-	  <input class="submit" value="Place Order">
-	  
-			</form>
-			</div>
-			<div class="table-responsive mt-20" style="display:none">
-			<table class="table">
-			<thead>
-			<th>Volume</th>
-			<th>Value</th>
-			<th>Date</th>
-			</thead>
-			</table>
-			</div>
-			<div class="table-responsive mt-20" style="display:none">
-			<table class="table">
-			<thead>
-			<th>Volume</th>
-			<th>Value</th>
-			<th>Date</th>
-			</thead>
-			</table>
-			</div>			
-		</div>
-		</div>
+	        <div class="btn-group" id="status" data-toggle="buttons">
+                  <label class="btn btn-default btn-on btn-sm active">
+                  <input type="radio" value="1" name="multifeatured_module[module_id][status]" checked="checked">Trade</label>			  
+                  <label class="btn btn-default btn-on btn-sm">
+                  <input type="radio" value="1" name="multifeatured_module[module_id][status]" checked="checked">Positions</label>
+                  <label class="btn btn-default btn-on btn-sm" id="ordersTab">
+                  <input type="radio" value="1" name="multifeatured_module[module_id][status]" checked="checked">Orders</label>
+                </div>
+			
+		                        <div id="tradeTab">
+						<form action="" class="place-order-form" method="">
+							<div class="form-group">
+								<select class="form-control">
+				                                  <option>Select Token</option>
+								</select>
+								<label>Balance</label>
+     							        <input class="form-control" placeholder="0.00" type="text">
+								<label>Amount</label>
+								<input class="form-control" placeholder="0.00" type="text">
+							</div>								
+							<div class="total-amount">
+								<div class="row">
+									<div class="col-md-4">
+										<p class="baseToken" style="float:left;"></p>
+									</div>
+									<div class="col-md-8">
+										<span>0/$0.00</span>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-4">
+										<p class="tradedToken" style="float:left;"></p>
+									</div>
+									<div class="col-md-8">
+										<span>0/$0.00</span>
+									</div>
+								</div>
+						        <input class="submit" value="Trade">
+     						        </div>
+	
+						</form>
+					</div>
+					<div class="table-responsive mt-20" id="positionsTab" style="display:none">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Volume</th>
+									<th>Value</th>
+									<th>Date</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+					<div class="table-responsive mt-20" id="ordersTab" style="display:none">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Volume</th>
+									<th>Value</th>
+									<th>Date</th>
+								</tr>
+							</thead>
+						</table>
+					</div>	
+			
+	    		
+			
+
 			<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12  order-book">
 				<div class="place-order">
 				<h3>Orderbook</h3>
