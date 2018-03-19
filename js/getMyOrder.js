@@ -19,14 +19,5 @@ function getMyOrders() {
               $('#positionsTable').append(newRow);
             }
         });
-  });  
-  console.log($('#ordersTable > tbody').rows);
-  $('#positionsTable > tbody > tr').on('click', function() {
-    console.log($(this));
-    $(this).addClass('selected2');
-  });  
-  $('#ordersTable > tbody > tr').on('click', function() {
-    console.log($(this));  
-    $(this).addClass('selected2');
-  });  
+  });   
 }  
