@@ -21,15 +21,9 @@ function getMyOrders() {
         });
     
         $('#positionsTable > tbody > tr').on('click', function() {
-          $('tr').removeClass('selected3');          
-          $(this).addClass('selected3');
-        });  
-  
-        $('#ordersTable > tbody > tr').on('click', function() {
           $('tr').removeClass('selected2');          
-          console.log($(this));
           $(this).addClass('selected2');
-        });
+        });  
     
   });
 }
