@@ -7,7 +7,7 @@ $('#positionsTab tr').on('click', function() {
   $(this).addClass('selected2');
 });  
 
-$('#ordersList tr').on('click', function() {
+$('#ordersList > table > tbody > tr:nth-child(1)').on('click', function() {
   console.log($(this));  
   $(this).addClass('selected2');
 });  
