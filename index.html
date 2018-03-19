@@ -246,7 +246,7 @@
               <label class="btn btn-default btn-on btn-sm">
               <input type="radio" value="1" name="multifeatured_module[module_id][status]" checked="checked">Positions</label>
               <label class="btn btn-default btn-on btn-sm" id="ordersTab">
-              <input type="radio" value="1" name="multifeatured_module[module_id][status]" checked="checked">Orders</label>
+              <input type="radio" value="1" name="multifeatured_module[module_id][status]" checked="checked">History</label>
             </div>
 <div>			
 <form class="place-order-form" id="tradeTab" action="" method="">
@@ -259,14 +259,18 @@
 	                                </div>
 	
 					<div class="form-group ">
-					<label>Balance</label>				  
-         <input type="text" class="form-control" placeholder="$0.00">
+					<label>Balance</label>	
+	<div class="input-group">					
+          <input type="text" class="form-control" placeholder="$0.00">
+	  <span class="input-group-addon"><span class="baseToken"></span></span>
+	</div>	 
 </div>	 
 				
 <div class="form-group ">
-					<label>Amount</label>			
-	  
+					<label>Amount</label>	
+	<div class="input-group">						  
          <input type="text" class="form-control" placeholder="$0.00">
+	  <span class="input-group-addon"><span class="tradedToken"></span></span>		
       </div>																	
 	  
 	  <input class="submit" value="Trade">
