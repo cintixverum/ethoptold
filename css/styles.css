@@ -31,7 +31,7 @@ option {
   font-weight:600;
 }
 
-#orderbook tr:hover {
+#orderbook tr:hover,#positionsTab tr:hover,#ordersList tr:hover {
   cursor:pointer;
   background-color:#f2f2f2;
 }	
