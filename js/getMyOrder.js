@@ -20,7 +20,7 @@ function getMyOrders() {
             }
         });
   });  
-  console.log($('#ordersTable'));
+  console.log($('#ordersTable > tbody > tr'));
   $('#positionsTable > tbody > tr').on('click', function() {
     console.log($(this));
     $(this).addClass('selected2');
