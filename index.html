@@ -249,39 +249,31 @@
               <input type="radio" value="1" name="multifeatured_module[module_id][status]" checked="checked">Orders</label>
             </div>
 <div>			
-<form class="place-order-form" action="" method="">			
+<form class="place-order-form" id="tradeTab" action="" method="">
+	                                  <select class="form-control">
+                                            <option>Select Token</option>
+                                          </select>
 					<div class="form-group ">
-					<label>Strike Price</label>			
+					<label>Balance</label>			
       <div class="input-group">
 	  
          <input type="text" class="form-control" placeholder="$0.00">
-	      <span class="input-group-addon"><span class="baseToken">ETH</span></span>
       </div>
 </div>	 
 				
 <div class="form-group ">
-					<label>Premium</label>			
+					<label>Amount</label>			
       <div class="input-group">
 	  
          <input type="text" class="form-control" placeholder="$0.00">
-	      <span class="input-group-addon"><span class="baseToken">ETH</span></span>
       </div>
-</div>					
-				
-<div class="form-group "> 
-<label>Amount</label>	  
-      <div class="form-group input-group">
-	  
-         <input type="text" class="form-control" placeholder="$0.00">
-	      <span class="input-group-addon"><span class="tradedToken">VERITASEUM</span></span>
-      </div>
-	  </div>								
+</div>																	
 	  
 	  <input class="submit" value="Place Order">
 	  
 			</form>
 			</div>
-			<div class="table-responsive mt-20" style="display:none">
+			<div class="table-responsive mt-20" id="positionsTab" style="display:none">
 			<table class="table">
 			<thead>
 			<th>Volume</th>
@@ -290,7 +282,7 @@
 			</thead>
 			</table>
 			</div>
-			<div class="table-responsive mt-20" style="display:none">
+			<div class="table-responsive mt-20" id="ordersList" style="display:none">
 			<table class="table">
 			<thead>
 			<th>Volume</th>
