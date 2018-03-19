@@ -15,7 +15,7 @@ function getMyOrders() {
             let maturation = new Date(parseInt(arr.maturation)*1000).toUTCString();
             let purchaseTimestamp = new Date(parseInt(arr.purchaseTimestamp)).toUTCString();
             let newRow;
-            console.log(arr.makerIsSeller,arr.tokenB,arr.tokenA);
+            console.log(arr.makerIsSeller,arr.tokenB,arr.tokenA,baseTokenAddress);
             if(arr.makerIsSeller === "true") {  
                 if(baseTokenAddress === arr.tokenB) {
                     newRow = '<tr order="' + JSON.stringify(arr).replace(/"/g, "'") + '"><th>' + tokenName + '</th><th>Call</th><th>' + maturation + '</th><th>' + purchaseTimestamp + '</th><th>No</th></tr>';
