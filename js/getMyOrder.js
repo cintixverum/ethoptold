@@ -27,6 +27,7 @@ function getMyOrders() {
   
         $('#ordersTable > tbody > tr').on('click', function() {
           $(this).removeClass('selected2');
+          console.log($(this));
           $(this).addClass('selected2');
         });
     
