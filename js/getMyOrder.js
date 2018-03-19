@@ -1,5 +1,4 @@
 function getMyOrders() {
-  $('#ordersList > table > tbody > tr:gt(0)').remove();  
   let userAddress = localStorage.getItem("userAddress");
   $.post('https://www.optionsdexapi.tk/getMyOrders', {
         'taker': userAddress
