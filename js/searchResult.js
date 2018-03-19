@@ -1,8 +1,6 @@
 $.get("https://www.optionsdexapi.tk/getApprovedTokens",function(tokenArray,status) {
     tokenArray.forEach(function(arr) {
-        console.log(arr);
         let paragraph = '<p fullname="' + arr['token_symbol'] + '" decimals="' + arr['decimals'] +  '" address="' + arr['token_address'] + '" >' + arr['token_symbol'] + '</p>'
-        console.log(paragraph);
         $('#search-dropdown').append(paragraph);
     });
     $('.baseToken').text(localStore.getItem("baseToken"));
