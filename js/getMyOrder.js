@@ -31,4 +31,6 @@ function getMyOrders() {
           console.log($(this));  
           $(this).addClass('selected2');
         });
-}  
+    
+  });
+}
