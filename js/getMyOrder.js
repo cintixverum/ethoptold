@@ -1,4 +1,5 @@
 function getMyOrders() {
+  $('#ordersList > table > tbody > tr:gt(0)').remove();  
   let userAddress = localStorage.getItem("userAddress");
   $.post('https://www.optionsdexapi.tk/getMyOrders', {
         'taker': userAddress
@@ -17,12 +18,12 @@ function getMyOrders() {
             if(arr.makerIsSeller === "true") {  
                 if(baseTokenAddress === arr.tokenB) {
                     newRow = '<tr order="' + JSON.stringify(arr).replace(/"/g, "'") + '"><th>' + tokenName + '</th><th>Call</th><th>' + maturation + '</th><th>' + purchaseTimestamp + '</th><th>No</th></tr>';
-                    $('#MyTrades > table > tbody').append(newRow);
+                    $('#ordersList > table').append(newRow);
                 }
             } else if(arr.makerIsSeller === "false") {
                 if(baseTokenAddress === arr.tokenA) {
                     newRow = '<tr order="' + JSON.stringify(arr).replace(/"/g, "'") + '"><th>' + tokenName + '</th><th>Put</th><th>' + maturation + '</th><th>' + purchaseTimestamp + '</th><th>No</th></tr>';
-                    $('#MyTrades > table > tbody').append(newRow);
+                    $('#ordersList > table').append(newRow);
                 }
             }
         });
