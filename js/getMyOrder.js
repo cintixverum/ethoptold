@@ -19,15 +19,14 @@ function getMyOrders() {
               $('#positionsTable').append(newRow);
             }
         });
-        console.log($('#ordersTable > tbody > tr'));
     
         $('#positionsTable > tbody > tr').on('click', function() {
-          console.log($(this));
-          $(this).addClass('selected2');
+          $(this).removeClass('selected3');          
+          $(this).addClass('selected3');
         });  
   
         $('#ordersTable > tbody > tr').on('click', function() {
-          console.log($(this));  
+          $(this).removeClass('selected2');
           $(this).addClass('selected2');
         });
     
