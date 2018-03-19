@@ -21,12 +21,12 @@ function getMyOrders() {
         });
     
         $('#positionsTable > tbody > tr').on('click', function() {
-          $(this).removeClass('selected3');          
+          $('tr').removeClass('selected3');          
           $(this).addClass('selected3');
         });  
   
         $('#ordersTable > tbody > tr').on('click', function() {
-          $(this).removeClass('selected2');
+          $('tr').removeClass('selected2');          
           console.log($(this));
           $(this).addClass('selected2');
         });
