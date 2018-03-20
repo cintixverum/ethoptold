@@ -8,7 +8,6 @@ function getMyOrders() {
             let tokenAddress =  arr.makerIsSeller === "true" ? arr.tokenB : arr.tokenA; 
             let tradedTokenQuery = "p[address='" + tokenAddress + "']";
             let tradedTokenName = $(tradedTokenQuery).attr("fullname");       
-            console.log(tradedTokenQuery,tradedTokenName);
             let timeframeQuery = "option[date='" + localStore.getItem("timeframe") + "']";
             let maturation = new Date(parseInt(arr.maturation)*1000).toUTCString();
             let purchaseTimestamp = new Date(parseInt(arr.purchaseTimestamp)).toUTCString();
@@ -24,6 +23,7 @@ function getMyOrders() {
         $('#positionsTable > tbody > tr').on('click', function() {
           $('tr').removeClass('selected2');          
           $(this).addClass('selected2');
+          localStorage.seItem("tradeableOrder",$(this).attr("order"));
         });  
     
   });
