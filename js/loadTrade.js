@@ -28,7 +28,7 @@ function loadTrade() {
     let element = $('option[name="' + tokenName + '"]');
     let tokenAddress = element.attr("address");
     $('#tradeTab > div:nth-child(2) > div > span > span').text(tokenName);
-    $('#tradeTab > div:nth-child(3) > div > span > span').text(tokenName);
+    $('#tradeTab > div:nth-child(3) > div > span > span').text(tokenName);    
     contractFunctions.getOrderBalance(order,tokenAddress,setBalance);
   });  
 
