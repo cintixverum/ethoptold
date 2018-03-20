@@ -1,5 +1,4 @@
 $('#tradeTab > div:nth-child(3) > div > input').keyup(function() {
-  console.log(amount);
   let amount = parseFloat($(this).val());
   let order = JSON.parse(localStore.getItem("tradeableOrder"));
   let tokenName = $('#tradeTab > div:nth-child(1) > select').val();
