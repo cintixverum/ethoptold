@@ -1,3 +1,7 @@
+function setBalance(val) {
+  $('#tradeTab > div:nth-child(2) > div > input').attr('placeholder',val);
+}  
+
 function loadTrade() {
   $('#tradeTab > div:nth-child(1) > select > option').not(':first').remove();
   
@@ -20,7 +24,7 @@ function loadTrade() {
   let baseTokenAddress = $(baseTokenQuery).attr("address");
   
   $('#tradeTab > div:nth-child(1) > select').on('click', function() {
-    contractFunctions.getOrderBalance(order,tradedTokenAddress);
+    contractFunctions.getOrderBalance(order,tradedTokenAddress,setBalance);
   });  
 
 }  
