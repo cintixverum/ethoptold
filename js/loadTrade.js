@@ -19,6 +19,8 @@ function loadTrade() {
   let tradedTokenAddress = $(tradedTokenQuery).attr("address");
   let baseTokenAddress = $(baseTokenQuery).attr("address");
   
-  contractFunctions.getOrderBalance(order,tradedTokenAddress);
+  $('#tradeTab > div:nth-child(1) > select').on('click', function() {
+    contractFunctions.getOrderBalance(order,tradedTokenAddress);
+  });  
 
 }  
