@@ -23,7 +23,7 @@ function getMyOrders() {
         $('#positionsTable > tbody > tr').on('click', function() {
           $('tr').removeClass('selected2');          
           $(this).addClass('selected2');
-          let order = localStore.setItem("tradeableOrder",$(this).attr("order"));
+          let order = localStore.setItem("tradeableOrder",JSON.parse($(this).attr("order")));
           let tradedTokenQuery = "p[address='" + order.tokenA + "']";
           let baseTokenQuery = "p[address='" + order.tokenB + "']";
           let tradedTokenName = $(tradedTokenQuery).attr("fullname");
