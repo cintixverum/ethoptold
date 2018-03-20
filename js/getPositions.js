@@ -9,10 +9,11 @@ function getPositions() {
             let tradedTokenQuery = "p[address='" + tokenAddress + "']";
             let tradedTokenName = $(tradedTokenQuery).attr("fullname");          
             let timeframeQuery = "option[date='" + localStore.getItem("timeframe") + "']";
+            console.log(arr);
             let maturation = new Date(parseInt(arr.maturation)*1000).toUTCString();
             let purchaseTimestamp = new Date(parseInt(arr.purchaseTimestamp)).toUTCString();
             let callPut = arr.makerIsSeller === "true" ? "Call" : "Put";
-            let isMaker = arr.maker === userAddress ? "Yes" : "No";         
+            let isMaker = arr.maker === userAddress ? "Yes" : "No";
             let newRow = '<tr order="' + JSON.stringify(arr).replace(/"/g, "'") + '"><th>' + tradedTokenName + '</th><th>' + callPut  + '</th><th>' + purchaseTimestamp + '</th><th>' + maturation + '</th><th>' + isMaker + '</th></tr>';
             $('#ordersTable').append(newRow);
             if(arr.expiration >= currentTime && arr.maturation >= currentTime) {
