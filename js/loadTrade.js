@@ -3,13 +3,11 @@ function loadTrade() {
   let tradedTokenName = localStore.getItem("tradeableOrderTradedTokenName");
   
   $('.tradeableOrderBaseTokenName').text(baseTokenName);
-  $('.tradeableOrderTradedTokenName').text(tradedTokenName);
- 
-  let option = "<option>" + baseTokenName  + "</option>";  
-  let option2 = option + "<option>" + tradedTokenName  + "</option>";
+  $('.tradeableOrderTradedTokenName').text(tradedTokenName);  
   
-  console.log($('#tradeTab > div:nth-child(1) > select').children());
-  
-  $('#tradeTab > div:nth-child(1) > select').append(option2);
-  
+  if($('#tradeTab > div:nth-child(1) > select').children() === 0) {
+    let option = "<option>" + baseTokenName  + "</option>";  
+    let option2 = option + "<option>" + tradedTokenName  + "</option>";
+    $('#tradeTab > div:nth-child(1) > select').append(option2);
+  }
 }  
