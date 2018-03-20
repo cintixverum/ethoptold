@@ -1,11 +1,6 @@
 function loadTrade() {
-
-  let order = localStore.setItem("tradeableOrder");
-  
-  let tradedTokenQuery = "p[address='" + order.tokenA + "']";
-  let baseTokenQuery = "p[address='" + order.tokenB + "']";
-  let tradedTokenName = $(tradedTokenQuery).attr("fullname");
-  let baseTokenName = $(baseTokenQuery).attr("fullname");
+  let baseTokenName = localStore.setItem("tradeableOrderBaseTokenName",baseTokenName);
+  let tradedTokenName = localStore.setItem("tradeableOrderTradedTokenName",tradedTokenName)
   
   $('.tradeableOrderBaseTokenName').text(baseTokenName);
   $('.tradeableOrderTradedTokenName').text(tradedTokenName);
