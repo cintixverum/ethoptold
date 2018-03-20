@@ -24,7 +24,7 @@ function getPositions() {
           $('tr').removeClass('selected2');          
           $(this).addClass('selected2');
           console.log($(this).attr("order"));
-          localStore.seItem("tradeableOrder",$(this).attr("order"));
+          localStore.setItem("tradeableOrder",$(this).attr("order"));
         });  
     
   });
