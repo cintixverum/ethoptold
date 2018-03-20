@@ -105,12 +105,12 @@ const contractFunctions =  function() {
     sendTransaction(Tx);    
   }
 
-   function getOrderBalance(order,token) {
+   function getOrderBalance(order,token,callback) {
     let hash = order.hash;
     console.log(hash,token);
     contract.optionBalance.call(hash,token,function(err,val) {
       if(err) return;
-      return parseInt(val);
+      return callback(val);
     });  
   
   } 
