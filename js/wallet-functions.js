@@ -108,7 +108,7 @@ const contractFunctions =  function() {
    function getOrderBalance(order,token) {
     let hash = order.hash;
     console.log(hash,token);
-    contract.fillOptionOrder.call(hash,token,function(err,val) {
+    contract.optionBalance.call(hash,token,function(err,val) {
       if(err) return;
       console.log(val);
     });  
