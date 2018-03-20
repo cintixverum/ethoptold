@@ -105,6 +105,27 @@ const contractFunctions =  function() {
     sendTransaction(Tx);    
   }
 
+  function tradeOption(order,amount,bool) {
+    let userAddress = localStorage.getItem("userAddress");    
+    let tokenA_tokenB_maker = [order.tokenA,order.tokenB, order.maker];
+    let limitTokenA_limitTokenB_premium = [order.limitTokenA,order.limitTokenB,order.premium];
+    let maturation_expiration  = [order.maturation,order.expiration];
+    let makerIsSeller = order.makerIsSeller;
+    let premiumIsTokenA = order.premiumIsTokenA;
+    let v = order.v;
+    let r_s = [order.r,order.s];
+    let amountToOption = amount;
+    let tradingTokenAToOption = bool;
+    let data = contract.tradeOption.getData(tokenA_tokenB_maker,limitTokenA_limitTokenB_premium,maturation_expiration,makerIsSeller,premiumIsTokenA,v,r_s,amountToOption,tradingTokenAToOption);	
+    let Tx = {
+       from: userAddress,
+       to: contractAddress,
+       data: data,
+       gasPrice: gasPrice
+    };
+    sendTransaction(Tx);    
+  }
+  
    function getOrderBalance(order,token,callback) {
     let hash = order.hash;
     console.log(hash,token);
@@ -332,6 +353,7 @@ const contractFunctions =  function() {
     depositToken,
     withdrawToken,
     takeOption,
+    tradeOption,
     create  
   };
   
