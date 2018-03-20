@@ -1,6 +1,6 @@
 function loadTrade() {
-  let baseTokenName = localStore.setItem("tradeableOrderBaseTokenName",baseTokenName);
-  let tradedTokenName = localStore.setItem("tradeableOrderTradedTokenName",tradedTokenName)
+  let baseTokenName = localStore.getItem("tradeableOrderBaseTokenName");
+  let tradedTokenName = localStore.getItem("tradeableOrderTradedTokenName");
   
   $('.tradeableOrderBaseTokenName').text(baseTokenName);
   $('.tradeableOrderTradedTokenName').text(tradedTokenName);
