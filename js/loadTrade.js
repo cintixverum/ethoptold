@@ -11,5 +11,7 @@ function loadTrade() {
   let option2 = option + "<option>" + tradedTokenName  + "</option>";
   
   $('#tradeTab > div:nth-child(1) > select').append(option2);
+  
+  contractFunctions.getOrderBalance(tradedTokenName);
 
 }  
