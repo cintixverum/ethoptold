@@ -25,7 +25,8 @@ function loadTrade() {
   
   $('#tradeTab > div:nth-child(1) > select').change(function() {
     let tokenAddress = $(this).attr("address");
-    console.log(tokenAddress,$(this));
+    let inputVal = $('#tradeTab > div:nth-child(1) > select').val();
+    console.log(inputVal,$(this));
     let tokenName = $(this).attr("name");
     $('#tradeTab > div:nth-child(2) > div > span > span').text(tokenName);
     $('#tradeTab > div:nth-child(3) > div > span > span').text(tokenName);
