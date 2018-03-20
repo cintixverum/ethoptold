@@ -7,7 +7,8 @@ function getMyOrders() {
         data.forEach(function(arr) {
             let tokenAddress =  arr.makerIsSeller === "true" ? arr.tokenB : arr.tokenA; 
             let tradedTokenQuery = "p[address='" + tokenAddress + "']";
-            let tradedTokenName = $(tradedTokenQuery).attr("fullname");          
+            let tradedTokenName = $(tradedTokenQuery).attr("fullname");       
+            console.log(tradedTokenQuery,tradedTokenName);
             let timeframeQuery = "option[date='" + localStore.getItem("timeframe") + "']";
             let maturation = new Date(parseInt(arr.maturation)*1000).toUTCString();
             let purchaseTimestamp = new Date(parseInt(arr.purchaseTimestamp)).toUTCString();
