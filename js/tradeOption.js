@@ -12,10 +12,11 @@ $('#tradeTab > div:nth-child(3) > div > input').keyup(function() {
   let baseTokenName = $('option[address="' + baseToken + '"]').attr('name');
   let tradedToken = order.tokenB;
   let tradedTokenName = $('option[address="' + tradedToken + '"]').attr('name');
-  console.log(baseTokenName,tradedTokenName);
-  tokenAddress === order.tokenA ? (baseTokenName = tradedTokenName,tradedTokenName = baseTokenName) : (tradedTokenName = tradedTokenName,baseTokenName = baseTokenName);
-  $('#tradeTab > div.total > div > div:nth-child(1) > div.col-md-4 > p').text(baseTokenName);
-  $('#tradeTab > div.total > div > div:nth-child(2) > div.col-md-4 > p').text(tradedTokenName);
+  let base,traded;
+  tokenAddress === order.tokenA ? (base = tradedTokenName,traded = baseTokenName) : (traded = tradedTokenName,base = baseTokenName);
+  console.log(tokenAddress === order.tokenA, base,traded);
+  $('#tradeTab > div.total > div > div:nth-child(1) > div.col-md-4 > p').text(base);
+  $('#tradeTab > div.total > div > div:nth-child(2) > div.col-md-4 > p').text(traded);
   $('#tradeTab > div.total > div > div:nth-child(1) > div.col-md-8 > span').text(amount);  
   $('#tradeTab > div.total > div > div:nth-child(2) > div.col-md-8 > span').text(price);
 });  
