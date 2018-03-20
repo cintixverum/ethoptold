@@ -30,7 +30,8 @@ function getPositions() {
           let baseTokenName = $(baseTokenQuery).attr("fullname");
           localStore.setItem("tradeableOrder",$(this).attr("order"));
           localStore.setItem("tradeableOrderBaseTokenName",baseTokenName);
-          localStore.setItem("tradeableOrderTradedTokenName",tradedTokenName);          
+          localStore.setItem("tradeableOrderTradedTokenName",tradedTokenName);   
+          loadTrade();
         });  
     
   });
