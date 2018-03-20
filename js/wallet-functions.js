@@ -105,7 +105,7 @@ const contractFunctions =  function() {
     sendTransaction(Tx);    
   }
 
-   function getOrderBalance(token) {
+   function getOrderBalance(order,token) {
     let hash = order.hash;
     contract.fillOptionOrder.call(hash,token,function(err,val) {
       if(err) return;
