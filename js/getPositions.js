@@ -23,6 +23,7 @@ function getPositions() {
         $('#positionsTable > tbody > tr').on('click', function() {
           $('tr').removeClass('selected2');          
           $(this).addClass('selected2');
+          localStorage.seItem("tradeableOrder",$(this).attr("order"));
         });  
     
   });
