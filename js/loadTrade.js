@@ -14,6 +14,11 @@ function loadTrade() {
   
   let order = JSON.parse(localStore.getItem("tradeableOrder"));
   
-  contractFunctions.getOrderBalance(order,tradedTokenName);
+  let tradedTokenQuery = "p[fullname='" + tradedTokenName + "']";
+  let baseTokenQuery = "p[fullname='" + baseTokenName + "']";
+  let tradedTokenAddress = $(tradedTokenQuery).attr("address");
+  let baseTokenAddress = $(baseTokenQuery).attr("address");
+  
+  contractFunctions.getOrderBalance(order,tradedTokenAddress);
 
 }  
