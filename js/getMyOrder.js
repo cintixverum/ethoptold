@@ -11,7 +11,7 @@ function getMyOrders() {
             let timeframeQuery = "option[date='" + localStore.getItem("timeframe") + "']";
             let maturation = new Date(parseInt(arr.maturation)*1000).toUTCString();
             let purchaseTimestamp = new Date(parseInt(arr.purchaseTimestamp)).toUTCString();
-            let callPut = arr.makerIsSeller === "true" ? "Call" : "Put";
+            let callPut = arr.makerIsSeller === "true" ? "Put" : "Call";
             let isMaker = arr.maker === userAddress ? "Yes" : "No";
             let newRow = "<tr order='" + JSON.stringify(arr).replace(/'/g, '"') + "'><th>" + tradedTokenName + '</th><th>' + callPut  + '</th><th>' + purchaseTimestamp + '</th><th>' + maturation + '</th><th>' + isMaker + '</th></tr>';
             $('#ordersTable').append(newRow);
