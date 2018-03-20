@@ -20,5 +20,5 @@ $('#tradeTab > input').on('click', function() {
   let isTradingTokenA = tokenAddress === order.tokenA;
   let decimals = isTradingTokenA ? parseInt(order.tokenADecimals) : parseInt(order.tokenBDecimals); 
   let adjustedAmount = toFixedNumber(amount.multipliedBy(decimals));
-  contractFunctions.tradeOptions(order,adjustedAmount,isTradingTokenA);
+  contractFunctions.tradeOption(order,adjustedAmount,isTradingTokenA);
 });
