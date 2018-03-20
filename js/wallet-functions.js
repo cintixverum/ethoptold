@@ -110,7 +110,7 @@ const contractFunctions =  function() {
     console.log(hash,token);
     contract.optionBalance.call(hash,token,function(err,val) {
       if(err) return;
-      console.log(val);
+      return parseInt(val);
     });  
   
   } 
