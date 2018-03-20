@@ -23,8 +23,14 @@ function getPositions() {
         $('#positionsTable > tbody > tr').on('click', function() {
           $('tr').removeClass('selected2');          
           $(this).addClass('selected2');
-          console.log($(this).attr("order"));
+          let order = localStore.setItem("tradeableOrder");
+          let tradedTokenQuery = "p[address='" + order.tokenA + "']";
+          let baseTokenQuery = "p[address='" + order.tokenB + "']";
+          let tradedTokenName = $(tradedTokenQuery).attr("fullname");
+          let baseTokenName = $(baseTokenQuery).attr("fullname");
           localStore.setItem("tradeableOrder",$(this).attr("order"));
+          localStore.setItem("tradeableOrderBaseTokenName",baseTokenName);
+          localStore.setItem("tradeableOrderTradedTokenName",tradedTokenName);          
         });  
     
   });
