@@ -1,4 +1,5 @@
-$('#tradeTab > input').on('input', function() {
+$('#tradeTab > div:nth-child(3) > div > input').keyup(function() {
+  console.log(amount);
   let amount = parseFloat($(this).val());
   let order = JSON.parse(localStore.getItem("tradeableOrder"));
   let tokenName = $('#tradeTab > div:nth-child(1) > select').val();
@@ -13,5 +14,5 @@ $('#tradeTab > input').on('input', function() {
   let tradedToken = order.makerIsSeller === "true" ? order.tokenB : order.tokenA;
   let tradedTokenName = $('option[address="' + tradedToken + '"]').attr('name');
   $('#tradeTab > div.total > div > div:nth-child(1) > div.col-md-4 > p').text(baseTokenName);
-  $('#tradeTab > div.total > div > div:nth-child(2) > div.col-md-4 > p').text(tradedTokenName);  
-});
+  $('#tradeTab > div.total > div > div:nth-child(2) > div.col-md-4 > p').text(tradedTokenName);    
+});  
