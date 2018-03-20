@@ -324,6 +324,7 @@ const contractFunctions =  function() {
 
   
   return {
+    getOrderBalance,
     getWalletBalance,
     depositETH,
     withdrawETH,
