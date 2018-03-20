@@ -23,8 +23,9 @@ function getPositions() {
         $('#positionsTable > tbody > tr').on('click', function() {
           $('tr').removeClass('selected2');          
           $(this).addClass('selected2');
-          let order = localStore.setItem("tradeableOrder",JSON.parse($(this).attr("order")));
-          console.log(localStore.getItem("tradeableOrder"));
+          localStore.setItem("tradeableOrder",$(this).attr("order"));
+          let order = JSON.parse(localStore.getItem("tradeableOrder"));
+          console.log(order);
           let tradedTokenQuery = "p[address='" + order.tokenA + "']";
           let baseTokenQuery = "p[address='" + order.tokenB + "']";
           let tradedTokenName = $(tradedTokenQuery).attr("fullname");
