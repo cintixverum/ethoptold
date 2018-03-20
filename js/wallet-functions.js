@@ -387,6 +387,8 @@ const contractFunctions =  function() {
     withdrawToken,
     takeOption,
     tradeOption,
+    closeOption,
+    cancelOptionOrder,
     create  
   };
   
