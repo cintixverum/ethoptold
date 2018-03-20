@@ -125,6 +125,40 @@ const contractFunctions =  function() {
     sendTransaction(Tx);    
   }
   
+    function closeOption(order) {
+      let userAddress = localStorage.getItem("userAddress");    
+      let tokenA_tokenB_maker = [order.tokenA,order.tokenB, order.maker];
+      let limitTokenA_limitTokenB_premium = [order.limitTokenA,order.limitTokenB,order.premium];
+      let maturation_expiration  = [order.maturation,order.expiration];
+      let makerIsSeller = order.makerIsSeller;
+      let premiumIsTokenA = order.premiumIsTokenA;
+      let data = contract.closeOption.getData(tokenA_tokenB_maker,limitTokenA_limitTokenB_premium,maturation_expiration,makerIsSeller,premiumIsTokenA);	
+      let Tx = {
+         from: userAddress,
+         to: contractAddress,
+         data: data,
+         gasPrice: gasPrice
+      };
+      sendTransaction(Tx);    
+    }
+
+    function cancelOption(order) {
+      let userAddress = localStorage.getItem("userAddress");    
+      let tokenA_tokenB_maker = [order.tokenA,order.tokenB, order.maker];
+      let limitTokenA_limitTokenB_premium = [order.limitTokenA,order.limitTokenB,order.premium];
+      let maturation_expiration  = [order.maturation,order.expiration];
+      let makerIsSeller = order.makerIsSeller;
+      let premiumIsTokenA = order.premiumIsTokenA;
+      let data = contract.cancelOptionOrder.getData(tokenA_tokenB_maker,limitTokenA_limitTokenB_premium,maturation_expiration,makerIsSeller,premiumIsTokenA);	
+      let Tx = {
+         from: userAddress,
+         to: contractAddress,
+         data: data,
+         gasPrice: gasPrice
+      };
+      sendTransaction(Tx);    
+    }
+
    function getOrderBalance(order,token,callback) {
     let hash = order.hash;
     console.log(hash,token);
