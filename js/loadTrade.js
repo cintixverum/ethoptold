@@ -10,6 +10,6 @@ function loadTrade() {
   let option = "<option>" + baseTokenName  + "</option>";  
   let option2 = option + "<option>" + tradedTokenName  + "</option>";
   
-  $('#tradeTab > div:nth-child(1)').append(option2);
+  $('#tradeTab > div:nth-child(1) > select').append(option2);
 
 }  
