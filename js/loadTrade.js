@@ -24,6 +24,7 @@ function loadTrade() {
   let order = JSON.parse(localStore.getItem("tradeableOrder"));
    
   $('#tradeTab > div:nth-child(1) > select').change(function() {
+    $('#tradeTab > div:nth-child(3) > div > input').val(' ');
     let tokenName = $('#tradeTab > div:nth-child(1) > select').val();
     let element = $('option[name="' + tokenName + '"]');
     let tokenAddress = element.attr("address");
