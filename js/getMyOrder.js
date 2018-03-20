@@ -13,6 +13,7 @@ function getMyOrders() {
             let purchaseTimestamp = new Date(parseInt(arr.purchaseTimestamp)).toUTCString();
             let callPut = arr.makerIsSeller === "true" ? "Call" : "Put";
             let isMaker = arr.maker === "userAddress" ? "Yes" : "No";
+            console.log(isMaker);
             let newRow = '<tr order="' + JSON.stringify(arr).replace(/"/g, "'") + '"><th>' + tradedTokenName + '</th><th>' + callPut  + '</th><th>' + purchaseTimestamp + '</th><th>' + maturation + '</th><th>' + isMaker + '</th></tr>';
             $('#ordersTable').append(newRow);
             if(arr.expiration >= currentTime && arr.maturation >= currentTime) {
