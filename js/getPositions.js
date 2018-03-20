@@ -5,7 +5,7 @@ function getPositions() {
         'maker': userAddress
     }, function(data) {
         data.forEach(function(arr) {
-            console.log(arr.tokenB,arr.tokenA);
+            console.log(arr.makerIsSeller,arr.tokenB,arr.tokenA);
             let tokenAddress =  arr.makerIsSeller === "true" ? arr.tokenB : arr.tokenA; 
             let tradedTokenQuery = 'p[address="' + tokenAddress + '"]';          
             let tradedTokenName = $(tradedTokenQuery).attr("fullname"); 
