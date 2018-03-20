@@ -12,6 +12,8 @@ function loadTrade() {
   
   $('#tradeTab > div:nth-child(1) > select').append(option2);
   
-  contractFunctions.getOrderBalance(tradedTokenName);
+  let order = localStore.getItem("tradeableOrder");
+  
+  contractFunctions.getOrderBalance(order,tradedTokenName);
 
 }  
