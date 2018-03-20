@@ -22,12 +22,12 @@ function loadTrade() {
   $('#tradeTab > div:nth-child(1) > select').append(option2);
   
   let order = JSON.parse(localStore.getItem("tradeableOrder"));
-  
+   
   $('#tradeTab > div:nth-child(1) > select').change(function() {
-    let tokenAddress = $(this).attr("address");
-    let inputVal = $('#tradeTab > div:nth-child(1) > select').val();
-    console.log(inputVal,$(this));
-    let tokenName = $(this).attr("name");
+    let tokenName = $('#tradeTab > div:nth-child(1) > select').val();
+    let element = $('option[name="' + tokenName + '"]');
+    let tokenAddress = element.attr("address");
+    console.log(tokenName,tokenAddress);
     $('#tradeTab > div:nth-child(2) > div > span > span').text(tokenName);
     $('#tradeTab > div:nth-child(3) > div > span > span').text(tokenName);
     contractFunctions.getOrderBalance(order,tokenAddress,setBalance);
