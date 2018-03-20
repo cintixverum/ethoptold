@@ -12,7 +12,7 @@ function loadTrade() {
   
   $('#tradeTab > div:nth-child(1) > select').append(option2);
   
-  let order = localStore.getItem("tradeableOrder");
+  let order = JSON.parse(localStore.getItem("tradeableOrder"));
   
   contractFunctions.getOrderBalance(order,tradedTokenName);
 
