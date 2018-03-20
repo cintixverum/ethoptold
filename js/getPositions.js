@@ -5,10 +5,10 @@ function getPositions() {
         'maker': userAddress
     }, function(data) {
         data.forEach(function(arr) {
+            console.log(arr.tokenB,arr.tokenA);
             let tokenAddress =  arr.makerIsSeller === "true" ? arr.tokenB : arr.tokenA; 
             let tradedTokenQuery = 'p[address="' + tokenAddress + '"]';          
             let tradedTokenName = $(tradedTokenQuery).attr("fullname"); 
-            console.log(tradedTokenQuery,tradedTokenName);
             let timeframeQuery = "option[date='" + localStore.getItem("timeframe") + "']";
             let maturation = new Date(parseInt(arr.maturation)*1000).toUTCString();
             let purchaseTimestamp = arr.purchaseTimestamp ? new Date(parseInt(arr.purchaseTimestamp)).toUTCString() : "None";
