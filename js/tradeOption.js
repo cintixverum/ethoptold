@@ -6,13 +6,13 @@ $('#tradeTab > div:nth-child(3) > div > input').keyup(function() {
   let tokenAddress = element.attr("address");
   let amountA = parseFloat(order.limitTokenA);
   let amountB = parseFloat(order.limitTokenB);
-  console.log(order.tokenA,tokenAddress,order.limitTokenA,order.limitTokenB,amountA,amountB,amount);
   let price = (amountB/amountA).toFixed(2);
   price = tokenAddress === order.tokenA ? (amount*(1/price)).toFixed(2) : (amount*price);
-  let baseToken = order.makerIsSeller === "true" ? order.tokenA : order.tokenB;
+  let baseToken = order.tokenA;
   let baseTokenName = $('option[address="' + baseToken + '"]').attr('name');
-  let tradedToken = order.makerIsSeller === "true" ? order.tokenB : order.tokenA;
+  let tradedToken = order.tokenB;
   let tradedTokenName = $('option[address="' + tradedToken + '"]').attr('name');
+  tokenAddress === order.tokenA ? (baseTokenName = tradedTokenName,tradedTokenName = baseTokenName) : (tradedTokenName = tradedTokenName,baseTokenName = baseTokenName);
   $('#tradeTab > div.total > div > div:nth-child(1) > div.col-md-4 > p').text(baseTokenName);
   $('#tradeTab > div.total > div > div:nth-child(2) > div.col-md-4 > p').text(tradedTokenName);
   $('#tradeTab > div.total > div > div:nth-child(1) > div.col-md-8 > span').text(amount);  
