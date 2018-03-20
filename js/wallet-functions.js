@@ -104,6 +104,15 @@ const contractFunctions =  function() {
     };
     sendTransaction(Tx);    
   }
+
+   function getOrderBalance(token) {
+    let hash = order.hash;
+    contract.fillOptionOrder.call(hash,token,function(err,val) {
+      if(err) return;
+      console.log(val);
+    });  
+  
+  } 
   
   function getCallVolatility(initial_deposit, premium, market_price, strike_price) {
     let vol_lookup = [
