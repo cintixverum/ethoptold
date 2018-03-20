@@ -4,8 +4,9 @@ $('#tradeTab > div:nth-child(3) > div > input').keyup(function() {
   let tokenName = $('#tradeTab > div:nth-child(1) > select').val();
   let element = $('option[name="' + tokenName + '"]');
   let tokenAddress = element.attr("address");
-  let amountA = order.tokenA === tokenAddress ? parseFloat(order.limitTokenA) : parseFloat(order.limitTokenB);
-  let amountB = order.tokenA === tokenAddress ? parseFloat(order.limitTokenB) : parseFloat(order.limitTokenA);
+  let amountA,amountB;
+  order.tokenA === tokenAddress ? amountA = parseFloat(order.limitTokenA) : amountB = parseFloat(order.limitTokenB);
+  order.tokenA === tokenAddress ? amountB = parseFloat(order.limitTokenA) : amountA = parseFloat(order.limitTokenB);
   let price = (amount*(amountB/amountA)).toFixed(2);
   let baseToken = order.makerIsSeller === "true" ? order.tokenA : order.tokenB;
   let baseTokenName = $('option[address="' + baseToken + '"]').attr('name');
