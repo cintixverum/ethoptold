@@ -342,6 +342,7 @@ const contractFunctions =  function() {
             'premiumIsTokenA': "true",
             'volatility': volatility,
             'purchased': "false",
+            'cancelled': "false",
             'hash': null,
             'v': null,
             'r': null,
