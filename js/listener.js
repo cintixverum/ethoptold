@@ -66,6 +66,15 @@ $('#tradeTab > div:nth-child(3) > div > input').keyup(function() {
   $('#tradeTab > div.total > div > div:nth-child(2) > div.col-md-8 > span').text(price);
 });  
 $('#status > label.btn.btn-default.btn-on.btn-sm').on('click', function() {
+  $('#body > div.wallet-container > div > div > form > input').val('Deposit');
+  localStorage.setItem('depositWithdraw','deposit');
+});
+
+$('#status > label.btn.btn-default.btn-off.btn-sm').on('click', function() {
+  $('#body > div.wallet-container > div > div > form > input').val('Withdraw');
+  localStorage.setItem('depositWithdraw','withdraw');  
+});
+$('#status > label.btn.btn-default.btn-on.btn-sm').on('click', function() {
   $('#positionsTab').hide();
   $('#ordersList').hide();  
   $('#tradeTab').show();
